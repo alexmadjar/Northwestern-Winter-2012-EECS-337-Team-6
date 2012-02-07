@@ -4,17 +4,19 @@ import re
 
 class Recipe:
     ingredients = []
-#class Ingredient:
-        #quantity = 0 #e.g. 1
-        #units = 0
+class Ingredient:
+        quantity = 0 #e.g. 1
+        units = 0
         #meat = False
-        #name = ''
+        name = ''
         
-def FetchRecipie(url):
-    usock = urllib2.urlopen(url)
-    html_data = usock.read()
-    usock.close()
-    #print html_data
+def FetchRecipe(url):
+    try:
+        usock = urllib2.urlopen(url)
+        html_data = usock.read()
+        usock.close()
+    except ValueError:
+        return None
      
     #Create the soup object from the HTML data
     soup = BeautifulSoup(html_data)
@@ -29,11 +31,14 @@ def FetchRecipie(url):
     regex = '\\r\\n.[ ]+'
     for ingredient_name in ingredients:
         recipeFromURL.ingredients.append(re.sub(regex, '', ingredient_name))
-        
-    print recipeFromURL.ingredients
-    return recipeFromURL
-####
-
-url = 'http://allrecipes.com/Recipe/Best-Tuna-Casserole/Detail.aspx'
-FetchRecipie(url)
     
+    return recipeFromURL
+    
+
+def PrintRecipe(recipy):
+    print recipy.ingredients
+    return None
+
+
+def VegetarianVersion(recipy):
+    return recipy
