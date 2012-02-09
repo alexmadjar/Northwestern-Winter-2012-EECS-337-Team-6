@@ -1,4 +1,5 @@
 import Recipe
+from fractions import Fraction
 
 def comparebylength(word1, word2):
     """
@@ -20,6 +21,14 @@ def removeParentheticals(t):
         t = p + n
     return t
 
+def returnFirstMatch(str, bank):
+	"""
+	returns the first string in bank that is a substring of str
+	"""
+	for s in bank:
+		if str.find(s) != -1:
+			return s
+	return ""
 
 class IngredientParser:
 	ingredients_list = []
@@ -27,18 +36,24 @@ class IngredientParser:
 	def __init__(self):
 		ingredients_file = open("ingredients.txt")
 		for line in ingredients_file:
-			self.ingredients_list.append(line.strip())
+			self.ingredients_list.append(" " + line.strip() + " ")
 		# dedupe the list
 		self.ingredients_list = list(set(self.ingredients_list))
 		# sort it by length for greedy string matching algorithm
 		self.ingredients_list.sort(cmp=comparebylength)
 		units_file = open("units.txt")
 		for line in units_file:
-			self.unit_list.append(line.strip())
+			self.unit_list.append(" " + line.strip() + " ")
 	
 	def CreateIngredientFromString(self, str):
 		ret = Recipe.Ingredient()
-		str = removeParentheticals(str)
+		str = removeParentheticals(str) + " "
 		str_toks = str.split(" ")
-		ret.quantity = int(str_toks[0])
+		try:
+			ret.quantity = float(Fraction(str_toks[0]))
+			ret.quantity += float(Fraction(str_toks[1]))
+		except ValueError:
+			pass
+		ret.ingredient = returnFirstMatch(str, self.ingredients_list).strip()
+		ret.unit = returnFirstMatch(str, self.unit_list).strip()
 		return ret
