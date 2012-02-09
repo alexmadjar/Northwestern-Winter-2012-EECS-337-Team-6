@@ -31,7 +31,7 @@ def FetchRecipe(url):
     regex = '\\r\\n.[ ]+'
     for ingredient_name in ingredients:
         recipeFromURL.ingredients.append(re.sub(regex, '', ingredient_name))
-    
+
     return recipeFromURL
     
 
@@ -42,3 +42,4 @@ def PrintRecipe(recipy):
 
 def VegetarianVersion(recipy):
     return recipy
+
