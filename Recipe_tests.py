@@ -15,11 +15,31 @@ class TestRecipeFunctions(unittest.TestCase):
 
 
 class TestIngredientParsing(unittest.TestCase):
+	def setUp(self):
+		self.ingparser = IngredientParser()
 
 	def testIngrediantParserWords(self):
-		ingparser = IngredientParser()
-		self.assertIs(ingparser.ingredients_list.count("onion"), 1)
-		self.assertIs(ingparser.unit_list.count("tablespoon"), 1)
+		self.assertIs(self.ingparser.ingredients_list.count("onion"), 1)
+		self.assertIs(self.ingparser.ingredients_list.count("ounce"), 0)
+		self.assertIs(self.ingparser.unit_list.count("tablespoon"), 1)
+		self.assertIs(self.ingparser.unit_list.count("sausage"), 0)
+	
+	# 4 cups cubed, cooked chicken meat',
+	# u'1 cup mayonnaise',
+	# u'1 teaspoon paprika',
+	# u'1 1/2 cups dried cranberries',
+	# u'1 cup chopped celery',
+	# u'2 green onions, chopped',
+	# u'1/2 cup minced green bell pepper',
+	# u'1 cup chopped pecans',
+	# u'1 teaspoon seasoning salt',
+	# u'ground black pepper to taste
+
+	def testIngrediantParsing(self):
+		ing = self.ingparser.CreateIngredientFromString(u'1 teaspoon seasoning salt')
+		self.assertIs(ing.quantity, 1)
+		self.assertIs(ing.unit, u'teaspoon')
+		self.assertIs(ing.ingredient, u'seasoning salt')
 
 
 if __name__ == '__main__':
