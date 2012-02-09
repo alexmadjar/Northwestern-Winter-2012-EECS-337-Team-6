@@ -1,9 +1,11 @@
 from BeautifulSoup import BeautifulSoup
 import urllib2
 import re
+from IngredientParser import IngredientParser
 
 class Recipe:
     ingredients = []
+
 class Ingredient:
         quantity = 0 #e.g. 1
         units = 0
@@ -29,8 +31,13 @@ def FetchRecipe(url):
     #Format the ingredients to remove \r\n and leading spaces 
     #Assign the formatted ingredients to 
     regex = '\\r\\n.[ ]+'
+    ingparser = IngredientParser()
     for ingredient_name in ingredients:
-        recipeFromURL.ingredients.append(re.sub(regex, '', ingredient_name))
+        recipeFromURL.ingredients.append(
+           ingparser.CreateIngredientFromString(
+              re.sub(regex, '', ingredient_name)
+            )
+         )
 
     return recipeFromURL
     
