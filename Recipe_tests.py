@@ -19,14 +19,13 @@ class TestIngredientParsing(unittest.TestCase):
 		self.ingparser = IngredientParser()
 
 	def testIngrediantParserWords(self):
-		self.assertIs(self.ingparser.ingredients_list.count("onion"), 1)
-		self.assertIs(self.ingparser.ingredients_list.count("ounce"), 0)
-		self.assertIs(self.ingparser.unit_list.count("tablespoon"), 1)
-		self.assertIs(self.ingparser.unit_list.count("sausage"), 0)
+		self.assertTrue(self.ingparser.isIngredient("chicken"))
+		self.assertTrue(self.ingparser.isIngredient("salt"))
+		self.assertFalse(self.ingparser.isIngredient("tablespoon"))
+		self.assertTrue(self.ingparser.isUnit("ounce"))
+		self.assertFalse(self.ingparser.isUnit("veal"))
 	
 	# test cases to add
-
-	# 4 cups cubed, cooked chicken meat',
 	# u'1 cup mayonnaise',
 	# u'1 teaspoon paprika',
 	# u'1 1/2 cups dried cranberries',
@@ -41,13 +40,21 @@ class TestIngredientParsing(unittest.TestCase):
 		self.assertTrue(abs(ing.quantity - float(1)) < 0.0000001) 
 		self.assertEqual(ing.unit, 'teaspoon')
 		self.assertEqual(ing.name, 'seasoning salt')
+		self.assertFalse(ing.meat)
 	
 	def testIngredientParseGreenOnions(self):
 		ing = self.ingparser.CreateIngredientFromString(u'2 green onions, chopped')
 		self.assertTrue(abs(ing.quantity - float(2)) < 0.0000001) 
 		self.assertEqual(ing.unit, 'unit')
 		self.assertEqual(ing.name, 'green onion')
+		self.assertFalse(ing.meat)
 
+	def testChickenCookedAndCubed(self):
+		ing = self.ingparser.CreateIngredientFromString(u'4 cups cubed, cooked chicken meat')
+		self.assertTrue(abs(ing.quantity - float(4)) < 0.0000001) 
+		self.assertEqual(ing.unit, 'cup')
+		self.assertEqual(ing.name, 'chicken')
+		self.assertTrue(ing.meat)
 
 if __name__ == '__main__':
     unittest.main()
