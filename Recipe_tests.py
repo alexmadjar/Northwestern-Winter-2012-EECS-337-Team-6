@@ -30,7 +30,6 @@ class TestIngredientParsing(unittest.TestCase):
 	# u'1 teaspoon paprika',
 	# u'1 1/2 cups dried cranberries',
 	# u'1 cup chopped celery',
-	# u'1/2 cup minced green bell pepper',
 	# u'1 cup chopped pecans',
 	# u'1 teaspoon seasoning salt',
 	# u'ground black pepper to taste
@@ -55,6 +54,13 @@ class TestIngredientParsing(unittest.TestCase):
 		self.assertEqual(ing.unit, 'cup')
 		self.assertEqual(ing.name, 'chicken')
 		self.assertTrue(ing.meat)
+	
+	def testHalfIngredient(self):
+		ing = self.ingparser.CreateIngredientFromString(u'1/2 cup minced green bell pepper')
+		self.assertTrue(abs(ing.quantity - float(0.5)) < 0.0000001) 
+		self.assertEqual(ing.unit, 'cup')
+		self.assertEqual(ing.name, 'bell pepper')
+		self.assertFalse(ing.meat)
 
 if __name__ == '__main__':
     unittest.main()

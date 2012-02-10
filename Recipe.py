@@ -38,7 +38,7 @@ def FetchRecipe(url):
               re.sub(regex, '', ingredient_name)
             )
          )
-
+    
     return recipeFromURL
     
 
