@@ -34,33 +34,27 @@ class TestIngredientParsing(unittest.TestCase):
 	# u'1 teaspoon seasoning salt',
 	# u'ground black pepper to taste
 
+	def ingredientParserHelper(self, st, quan, uni, nam, ismeat):
+		ing = self.ingparser.CreateIngredientFromString(st)
+		self.assertTrue(abs(ing.quantity - float(quan) < 0.0000001) )
+		self.assertEqual(ing.unit, uni)
+		self.assertEqual(ing.name, nam)
+		self.assertTrue(ing.meat == ismeat)
+	
+	def testPaprika(self):
+		self.ingredientParserHelper(u'1 teaspoon paprika', 1, "teaspoon", "paprika", False)
+
 	def testIngrediantParsingSeasoningSalt(self):
-		ing = self.ingparser.CreateIngredientFromString(u'1 teaspoon seasoning salt')
-		self.assertTrue(abs(ing.quantity - float(1)) < 0.0000001) 
-		self.assertEqual(ing.unit, 'teaspoon')
-		self.assertEqual(ing.name, 'seasoning salt')
-		self.assertFalse(ing.meat)
+		self.ingredientParserHelper(u'1 teaspoon seasoning salt', 1, "teaspoon", "seasoning salt", False)
 	
 	def testIngredientParseGreenOnions(self):
-		ing = self.ingparser.CreateIngredientFromString(u'2 green onions, chopped')
-		self.assertTrue(abs(ing.quantity - float(2)) < 0.0000001) 
-		self.assertEqual(ing.unit, 'unit')
-		self.assertEqual(ing.name, 'green onion')
-		self.assertFalse(ing.meat)
+		self.ingredientParserHelper(u'2 green onions, chopped', 2, "unit", "green onion", False)
 
 	def testChickenCookedAndCubed(self):
-		ing = self.ingparser.CreateIngredientFromString(u'4 cups cubed, cooked chicken meat')
-		self.assertTrue(abs(ing.quantity - float(4)) < 0.0000001) 
-		self.assertEqual(ing.unit, 'cup')
-		self.assertEqual(ing.name, 'chicken')
-		self.assertTrue(ing.meat)
+		self.ingredientParserHelper(u'4 cups cubed, cooked chicken meat', 4, "cup", "chicken", True)
 	
 	def testHalfIngredient(self):
-		ing = self.ingparser.CreateIngredientFromString(u'1/2 cup minced green bell pepper')
-		self.assertTrue(abs(ing.quantity - float(0.5)) < 0.0000001) 
-		self.assertEqual(ing.unit, 'cup')
-		self.assertEqual(ing.name, 'bell pepper')
-		self.assertFalse(ing.meat)
+		self.ingredientParserHelper(u'1/2 cup minced green bell pepper', 0.5, "cup", "bell pepper", False)
 
 if __name__ == '__main__':
     unittest.main()
