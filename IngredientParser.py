@@ -36,14 +36,14 @@ class IngredientParser:
 	def __init__(self):
 		ingredients_file = open("ingredients.txt")
 		for line in ingredients_file:
-			self.ingredients_list.append(" " + line.strip() + " ")
+			self.ingredients_list.append(line.strip())
 		# dedupe the list
 		self.ingredients_list = list(set(self.ingredients_list))
 		# sort it by length for greedy string matching algorithm
 		self.ingredients_list.sort(cmp=comparebylength)
 		units_file = open("units.txt")
 		for line in units_file:
-			self.unit_list.append(" " + line.strip() + " ")
+			self.unit_list.append(line.strip())
 	
 	def CreateIngredientFromString(self, str):
 		ret = Recipe.Ingredient()
@@ -54,6 +54,10 @@ class IngredientParser:
 			ret.quantity += float(Fraction(str_toks[1]))
 		except ValueError:
 			pass
-		ret.ingredient = returnFirstMatch(str, self.ingredients_list).strip()
-		ret.unit = returnFirstMatch(str, self.unit_list).strip()
+		rin = returnFirstMatch(str, self.ingredients_list).strip()
+		if rin != '':
+			ret.name = rin
+		rin = returnFirstMatch(str, self.unit_list).strip()
+		if rin != '':
+			ret.unit = rin
 		return ret

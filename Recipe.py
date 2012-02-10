@@ -8,9 +8,9 @@ class Recipe:
 
 class Ingredient:
         quantity = 0 #e.g. 1
-        unit = '' #e.g. tablespoon
+        unit = 'unit' #e.g. tablespoon
         #meat = False
-        name = '' #e.g. salt
+        name = 'unknown' #e.g. salt
         
 def FetchRecipe(url):
     try:
