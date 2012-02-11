@@ -52,6 +52,9 @@ class TestIngredientParsing(unittest.TestCase):
 	
 	def testMixedFraction(self):
 		self.ingredientParserHelper(u'1 1/2 cups dried cranberries', 1.5, "cup", "cranberries", False)
+	
+	def testToTaste(self):
+		self.ingredientParserHelper(u'ground black pepper to taste', 0.0, "to taste", "black pepper", False)
 
 if __name__ == '__main__':
     unittest.main()
