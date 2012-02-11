@@ -37,7 +37,7 @@ butter
 butternut pumpkin
 butternut squash
 cabbage
-cactus, edible
+cactus
 calabrese
 cannabis
 capsicum
@@ -245,7 +245,7 @@ sesame seeds
 sunflower seeds
 shallot
 soda
-soda, baking
+ baking soda
 soybean
 spaghetti squash
 spek
@@ -580,7 +580,8 @@ Avocado (Persea americana; Lauraceae)
 Babaco (Carica pentagona; Caricaceae)
 Bacupari (Garcinia gardneriana)
 Bacuri (Platonia esculenta; Guttiferae)
-Bael, or Woodapple (Aegle marmelos; Rutaceae)
+Bael
+Woodapple (Aegle marmelos; Rutaceae)
 Banana (Musacea spp.; Musaceae)
 Barbadine (granadilla; maracujá-açu in Portuguese)
 Barbados Cherry
@@ -682,7 +683,7 @@ Custard Apple (Annona reticulata; Annonaceae)
 Akudjura (Solanum centrale) (Australia)
 Alexanders (Smyrnium olusatrum)
 Alfalfa (Medicago sativa)
-Alkanet (Alkanna tinctoria), for red color
+Alkanet (Alkanna tinctoria)
 Allspice (Pimenta dioica)
 Angelica (Angelica archangelica)
 Anise (Pimpinella anisum)
@@ -702,7 +703,7 @@ holy basil
 Bay leaf (Laurus nobilis)
 Boldo (Peumus boldus)
 Borage (Borago officinalis)
-Black cardamom (Amomum subulatum, Amomum costatum)
+Black cardamom
 Black mustard (Brassica nigra)
 Blue fenugreek
 blue melilot (Trigonella caerulea)
@@ -730,7 +731,7 @@ Cicely (Myrrhis odorata)
 Cilantros
 coriander greens
 coriander herb (Coriandrum sativum)
-Indonesian Cinnamon (Cinnamomum burmannii, Cassia vera)
+Indonesian Cinnamon
 Saigon Cinnamon
 Vietnamese Cinnamon (Cinnamomum loureiroi)
 Cinnamon
@@ -864,7 +865,8 @@ Pink pepper (Schinus terebinthifolius)
 
 Quassia (Quassia amara) (bitter spice in aperitifs and some beers and fortified wines)
 
-Ramsons, wood garlic (Allium ursinum)
+Ramsons
+wood garlic (Allium ursinum)
 Rice paddy herb (Limnophila aromatica) (Vietnam)
 Rosemary (Rosmarinus officinalis)
 Rue (Ruta graveolens)
@@ -896,7 +898,8 @@ Vietnamese coriander (Persicaria odorata)
 Voatsiperifery (Piper borbonense)
 
 Wasabi (Wasabia japonica)
-Water-pepper, smartweed (Polygonum hydropiper)
+Water-pepper
+smartweed (Polygonum hydropiper)
 Watercress (Rorippa nasturtium-aquatica)
 Wattleseed (from about 120 spp. of Australian Acacia)
 White mustard (Sinapis alba)
@@ -905,12 +908,14 @@ Wild thyme (Thymus serpyllum)
 Willow herb (Epilobium parviflorum)
 Winter savory (Satureja montana)
 Wintergreen (Gaultheria procumbens)
-Wood avens, herb bennet (Geum urbanum)
+Wood avens
+herb bennet (Geum urbanum)
 Woodruff (Galium odoratum)
-Wormwood, absinthe (Artemisia absinthium)
+Wormwood
+absinthe (Artemisia absinthium)
 viburnum bark (labheda fruit)
 
 Yellow mustard 
 
-Za'atar (herbs from the genera Origanum, Calamintha, Thymus, and Satureja)
+Za'atar
 Zedoary (Curcuma zedoaria)
