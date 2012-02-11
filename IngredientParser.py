@@ -9,6 +9,8 @@ class IngListItem:
 		self.name = st
 		self.meat = b
 
+def normalize_string(line):
+	return removeParentheticals(line).strip().lower()
 
 def comparebylength(word1, word2):
     """
@@ -30,12 +32,12 @@ def removeParentheticals(t):
         t = p + n
     return t
 
-def returnFirstMatch(str, bank):
+def returnFirstMatch(st, bank):
 	"""
 	returns the first string in bank that is a substring of str
 	"""
 	for s in bank:
-		if str.find(s.name) != -1:
+		if st.find(s.name) != -1:
 			return s
 	return IngListItem("", False)
 
@@ -45,7 +47,7 @@ class IngredientParser:
 	def __init__(self):
 		ingredients_file = open("ingredients.txt")
 		for line in ingredients_file:
-			self.ingredients_list.append(line.strip())
+			self.ingredients_list.append(normalize_string(line))
 		# dedupe the list
 		self.ingredients_list = list(set(self.ingredients_list))
 		# convert to list items
@@ -55,7 +57,7 @@ class IngredientParser:
 		ingredients_file = open("meats.txt")
 		self.ingredients_list = []
 		for line in ingredients_file:
-			self.ingredients_list.append(line.strip())
+			self.ingredients_list.append(normalize_string(line))
 		# dedupe the list
 		self.ingredients_list = list(set(self.ingredients_list))
 		for line in self.ingredients_list:
@@ -65,7 +67,7 @@ class IngredientParser:
 		self.ingredients_list.sort(cmp=comparebylength)
 		units_file = open("units.txt")
 		for line in units_file:
-			self.unit_list.append(IngListItem(line.strip(), False))
+			self.unit_list.append(IngListItem(normalize_string(line), False))
 		self.unit_list = list(set(self.unit_list))
 	
 	def isIngredient(self, st):

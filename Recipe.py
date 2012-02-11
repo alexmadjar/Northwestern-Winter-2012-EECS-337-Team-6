@@ -35,7 +35,7 @@ def FetchRecipe(url):
     for ingredient_name in ingredients:
         recipeFromURL.ingredients.append(
            ingparser.CreateIngredientFromString(
-              re.sub(regex, '', ingredient_name)
+              re.sub(regex, '', ingredient_name).lower()
             )
          )
     

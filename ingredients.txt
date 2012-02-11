@@ -75,7 +75,7 @@ cream of tartar
 cucumber
 cumin
 daikon
-dairy products and dairy substitutes
+dairy substitute
 butter
 clarified butter
 eggs
@@ -488,3 +488,192 @@ xanthan gum
 yam
 yeast
 zucchini
+American Chestnut
+American Black Elderberry
+American grape
+American Hazelnut
+American Mayapple
+American persimmon
+American plum
+American Red Elderberry
+American Red Raspberry
+Beach Plum
+Black cherry
+Black raspberry
+Black Walnut
+Blueberry
+Buffaloberry
+Chokecherry
+Coco plum
+Cranberry
+cranberries
+Eastern May Hawthorn
+False-mastic
+Florida strangler fig
+Ground Plum
+Huckleberry
+Maypop
+Muscadine
+Pawpaw
+Pecan
+Prickly pear
+Pigeon plum
+Red mulberry
+Salal
+Salmonberry
+Saskatoonberry
+Saw Palmetto
+Southern Crabapple
+Texas Persimmon
+Thimbleberry
+Toyon
+Avocado
+Barberry
+Cainito
+Capuli cherry
+Cherimoya
+Coconut
+Feijoa
+Giant Columbian blackberry
+Guarana
+Guava
+Keule
+Lardizabala
+Mamey
+Maqui
+Naranjilla
+Papaya
+Peumo
+Pineapple
+Sapote
+Sea grape
+Strawberry
+Soursop
+Sugar-apple
+Ugni
+
+
+Abiu (Pouteria caimito; Sapotaceae)
+Acerola (Malpighia glabra; Malpighiaceae)
+Ackee (Blighia sapida or Cupania sapida; Sapindaceae)
+African cherry orange (Citropsis schweinfurthii; Rutaceae)
+African mango (Irvingia gabonensis)
+African moringa (Moringa stenopetala; Moringaceae)
+Ambarella (Spondias dulcis; Anacardiaceae)
+American Black Elderberry (Sambucus canadensis; Adoxaceae)
+American Chestnut (Castanea dentata; Fagaceae)
+American grape
+American Hazelnut (Corylus americana; Betulaceae)
+American Pawpaw (Asimina triloba; Annonaceae)
+American Persimmon (Diospyros virginiana; Ebenaceae)
+American plum (Prunus americana; Rosaceae)
+American Red Elderberry (Sambucus pubens; Adoxaceae)
+American Red Raspberry (Rubus strigosus; Rosaceae)
+Apple
+Apricot (Prunus armeniaca or Armeniaca vulgaris)
+Araza (Eugenia stipitata)
+Arhat (Siraitia grosvenorii; Cucurbitaceae)
+Atemoya (Annona cherimola × Annona squamosa; Annonaceae)
+Atherton Raspberry (Rubus probus; Rosaceae)
+Avocado (Persea americana; Lauraceae)
+
+Babaco (Carica pentagona; Caricaceae)
+Bacupari (Garcinia gardneriana)
+Bacuri (Platonia esculenta; Guttiferae)
+Bael, or Woodapple (Aegle marmelos; Rutaceae)
+Banana (Musacea spp.; Musaceae)
+Barbadine (granadilla; maracujá-açu in Portuguese)
+Barbados Cherry
+acerola
+Batuan (Garcinia morella)
+Beach Plum (Prunus maritima; Rosaceae)
+Bearberry (Arctostaphylos spp.)
+Betel Nut (“Areca catechu”; Arecaceae)
+Bignay (Antidesma bunius; Euphorbiaceae)
+Bilberry or whortleberry (Vaccinium spp.)
+Bilimbi (Averrhoa bilimbi; Oxalidaceae) 
+cucumber tree
+tree sorrel
+Biribi (Rollinia deliciosa; Annonaceae)
+Bitter melon
+Black Apple (Planchonella australis; Sapotaceae)
+Black cherry (Prunus serotina; Rosaceae)
+Black raspberry (Rubus occidentalis or Rubus leucodermis; Rosaceae)
+Black Mulberry (Morus nigra; Moraceae)
+Black Sapote (Diospyros digyna)
+Black Walnut (Juglans nigra; Juglandaceae)
+Blackberry
+Blood Orange
+Blue tongue (Melastoma affine; Melastomataceae)
+Blueberry (Vaccinium, sect. Cyanococcus; Ericaceae)
+Bolivian coconut (Parajubaea torallyi)
+Bolwarra (Eupomatia laurina; Eupomatiaceae)
+Boquila (Boquila trifoliata ; Lardizabalaceae)
+Bottle Gourd
+Brazilian Guava (Psidium guineense; Myrtaceae)
+Breadnut (Artocarpus camansi; Moraceae)
+Mayan breadnut
+Broad-leaf Bramble (Rubus moluccanus; Rosaceae)
+Buddha's Hand
+Buffaloberry (Shepherdia argenta; Elaeagnaceae)
+Burdekin Plum (Pleiogynium timorense; Anacardiaceae)
+Burmese grape
+Latka
+Bush tomato (Certain Solanum species; Solanaceae)
+Button Mangosteen (Garcinia prainiana)
+
+Caimito (Pouteria caimito; Sapotaceae)
+Calabash Tree (Crescentia cujete)
+Calamondin (Citrofortunella Microcarpa)
+Calamansi (×Citrofortunella Mitis))
+CamuCamu (Myrciaria dubia; Myrtaceae)
+Canistel (Pouteria campechiana; Sapotaceae)
+Cantaloupe
+Cape Gooseberry
+Capuli cherry
+Carambola (Averrhoa carambola; Oxalidaceae)
+Carob (Ceratonia siliqua; Fabaceae)
+Cashew apple (Anacardium occidentale)
+Cassabanana (Sicana odorifera; Cucurbitaceae)
+Cattley Guava (Psidium cattleianum; Myrtaceae)
+Cawesh (Annona scleroderma; Annonaceae)
+Cedar Bay cherry (Eugenia carissoides; Myrtaceae)
+Ceriman (Monstera deliciosa; Araceae)
+Cereus peruvianus
+Ceylon gooseberry (Dovyalis hebecarpa; Flacourtiaceae
+Charichuelo (Garcinia intermedia)
+Chayote (Sechium edule; Cucurbitaceae)
+Che (Cudrania tricuspidata; Moraceae)
+Chempedak or Champedak (Artocarpus integer; Moraceae)
+Chenet
+Cherimoya
+Cherry
+Cherry ballart (Exocarpus cupressiformis; Santalaceae)
+Cherry of the Rio Grande (Eugenia aggregata; Myrtaceae)
+Chilean guava
+Chinese jujube (Ziziphus Zizyphus; Rhamnaceae)
+Chinese Olive (Canarium album; Burseraceae)
+Chinese Quince (Pseudocydonia sinensis)
+Chokeberry (Aronia)
+Chokecherry (Prunus virginiana)
+Chupa-Chupa (Quararibea cordata; Malvaceae)
+Citron (Citrus medica)
+Clementine (Citrus reticulata var. clementine)
+Cloudberry (Rubus chamaemorus)
+Cluster fig (Ficus racemosa; Moraceae)
+Cocky apple (Planchonia careya)
+Coco Plum (Chrysobalanus icaco; Chrysobalanaceae)
+Cocona (Solanum sessilifolium; Solanaceae)
+Coconut (Cocos nucifera; Arecaceae)
+Cocoplum (Chrysobalanus icaco; Chrysobalanaceae)
+Coffee ("coffee cherries" surround the better-known "bean")
+Cola nut (Cola acuminata; Sterculiaceae)
+Common apple-berry (Billardiera scandens; Pittosporaceae)
+Conkerberry (Carissa lanceolata; Apocynaceae)
+Cornelian cherry (Cornus mas; Cornaceae)
+Costa Rican Guava (Psidium friedrichsthalianum; Myrtaceae)
+Cranberry (Vaccinium spp.)
+Crowberry (Empetrum spp.) 
+Currant (Ribes spp.; Grossulariaceae)
+Curry-leaf Tree (Murraya koenigii; Rutaceae)
+Custard Apple (Annona reticulata; Annonaceae)

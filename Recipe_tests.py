@@ -26,12 +26,6 @@ class TestIngredientParsing(unittest.TestCase):
 		self.assertFalse(self.ingparser.isUnit("veal"))
 	
 	# test cases to add
-	# u'1 cup mayonnaise',
-	# u'1 teaspoon paprika',
-	# u'1 1/2 cups dried cranberries',
-	# u'1 cup chopped celery',
-	# u'1 cup chopped pecans',
-	# u'1 teaspoon seasoning salt',
 	# u'ground black pepper to taste
 
 	def ingredientParserHelper(self, st, quan, uni, nam, ismeat):
@@ -55,6 +49,9 @@ class TestIngredientParsing(unittest.TestCase):
 	
 	def testHalfIngredient(self):
 		self.ingredientParserHelper(u'1/2 cup minced green bell pepper', 0.5, "cup", "bell pepper", False)
+	
+	def testMixedFraction(self):
+		self.ingredientParserHelper(u'1 1/2 cups dried cranberries', 1.5, "cup", "cranberries", False)
 
 if __name__ == '__main__':
     unittest.main()
