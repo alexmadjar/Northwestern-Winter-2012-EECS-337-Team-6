@@ -33,3 +33,89 @@ sweetbread
 sweetmeat
 turkey
 venison
+chicken bouillon
+
+
+Back bacon
+Boston butt
+Fatback
+Guanciale
+Ham hock
+Pancetta
+Pig's trotters
+Pork belly
+Pork chop
+Pork loin
+Pork ribs
+Pork rind
+Pork steak
+Spare ribs
+Pork tenderloin
+
+
+7-Bone
+Beef clod
+Beef shank
+Blade steak
+blade
+Brisket
+Carcass grade
+Chateaubriand
+Chuck steak
+Cube steak
+Delmonico steak
+delmonico
+Filet mignon
+Flank steak
+flank
+Flap steak
+Flat iron steak
+flat iron
+Hanger steak
+hanger
+Oxtail
+Plate steak
+Popeseye steak
+Ranch steak
+Restructured steak
+Rib eye steak
+Rib steak
+rib
+ribeye
+rib eye
+Round steak
+Rump steak
+Short loin
+Short ribs
+Shoulder tender
+shoulder
+Silverside
+Sirloin steak
+Sirloin
+Skirt steak
+Sobrebarriga
+Spare ribs
+Standing rib roast
+Strip steak
+T-bone steak
+T-bone
+Beef tenderloin
+tenderloin
+Top sirloin
+Tournedos
+Tri-tip
+t bone
+tritip
+tri tip
+
+
+fish
+anchovies
+catfish
+cod
+salt cod
+salmon
+skate
+stockfish
+trout
+tuna

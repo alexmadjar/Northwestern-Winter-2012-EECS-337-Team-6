@@ -48,13 +48,13 @@ class TestIngredientParsing(unittest.TestCase):
 		self.ingredientParserHelper(u'4 cups cubed, cooked chicken meat', 4, "cup", "chicken", True)
 	
 	def testHalfIngredient(self):
-		self.ingredientParserHelper(u'1/2 cup minced green bell pepper', 0.5, "cup", "bell pepper", False)
+		self.ingredientParserHelper(u'1/2 cup minced green bell pepper', 0.5, "cup", "green bell pepper", False)
 	
 	def testMixedFraction(self):
 		self.ingredientParserHelper(u'1 1/2 cups dried cranberries', 1.5, "cup", "cranberries", False)
 	
 	def testToTaste(self):
-		self.ingredientParserHelper(u'ground black pepper to taste', 0.0, "to taste", "black pepper", False)
+		self.ingredientParserHelper(u'ground black pepper to taste', 1.0, "to taste", "black pepper", False)
 
 if __name__ == '__main__':
     unittest.main()

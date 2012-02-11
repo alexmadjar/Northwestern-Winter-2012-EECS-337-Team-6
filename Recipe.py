@@ -7,7 +7,7 @@ class Recipe:
     ingredients = []
 
 class Ingredient:
-        quantity = 0 #e.g. 1
+        quantity = 1.0 #e.g. 1
         unit = 'unit' #e.g. tablespoon
         meat = False
         name = 'unknown' #e.g. salt
