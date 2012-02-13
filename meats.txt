@@ -97,6 +97,7 @@ Sobrebarriga
 Spare ribs
 Standing rib roast
 Strip steak
+steak
 T-bone steak
 T-bone
 Beef tenderloin
