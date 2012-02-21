@@ -1,14 +1,25 @@
 import Recipe
 from fractions import Fraction
 
+class IngListItem:
+	name = ''
+	meat = False
+
+	def __init__(self, st, b):
+		self.name = st
+		self.meat = b
+
+def normalize_string(line):
+	return removeParentheticals(line).strip().lower()
+
 def comparebylength(word1, word2):
-	"""
-	write your own compare function:
-	returns value < 0 of word1 longer then word2
-	returns value = 0 if the same length
-	returns value > 0 of word2 longer than word1
-	"""
-	return len(word2) - len(word1)
+    """
+    write your own compare function:
+    returns value < 0 of word1 longer then word2
+    returns value = 0 if the same length
+    returns value > 0 of word2 longer than word1
+    """
+    return len(word2.name) - len(word1.name)
 
 def removeParentheticals(t):
 	"""
@@ -21,14 +32,14 @@ def removeParentheticals(t):
 		t = p + n
 	return t
 
-def returnFirstMatch(str, bank):
+def returnFirstMatch(st, bank):
 	"""
 	returns the first string in bank that is a substring of str
 	"""
 	for s in bank:
-		if str.find(s) != -1:
+		if st.find(s.name) != -1:
 			return s
-	return ""
+	return IngListItem("", False)
 
 def isMeat(str,bank):
 	for s in bank:
@@ -44,31 +55,56 @@ class IngredientParser:
 	def __init__(self):
 		ingredients_file = open("ingredients.txt")
 		for line in ingredients_file:
-			self.ingredients_list.append(line.strip())
+			self.ingredients_list.append(normalize_string(line))
 		# dedupe the list
-		#self.ingredients_list = list(set(self.ingredients_list))
+		self.ingredients_list = list(set(self.ingredients_list))
+		# convert to list items
+		ing_list = []
+		for line in self.ingredients_list:
+			ing_list.append(IngListItem(line, False))
+		ingredients_file = open("meats.txt")
+		self.ingredients_list = []
+		for line in ingredients_file:
+			self.ingredients_list.append(normalize_string(line))
+		# dedupe the list
+		self.ingredients_list = list(set(self.ingredients_list))
+		for line in self.ingredients_list:
+			ing_list.append(IngListItem(line, True))
 		# sort it by length for greedy string matching algorithm
-		#self.ingredients_list.sort(cmp=comparebylength)
+		self.ingredients_list = ing_list
+		self.ingredients_list.sort(cmp=comparebylength)
 		units_file = open("units.txt")
 		for line in units_file:
-			self.unit_list.append(line.strip())
-		meats_file = open("meats.txt")	
-		for line in meats_file:
-			self.meats_list.append(line.strip())
+			self.unit_list.append(IngListItem(normalize_string(line), False))
+		self.unit_list = list(set(self.unit_list))
+	
+	def isIngredient(self, st):
+		for s in self.ingredients_list:
+			if st == s.name:
+				return True
+		return False
+	
+	def isUnit(self, st):
+		for s in self.unit_list:
+			if st == s.name:
+				return True
+		return False
 
-	def CreateIngredientFromString(self, str):
+	def CreateIngredientFromString(self, st):
 		ret = Recipe.Ingredient()
-		str = str.lower()
-		str = removeParentheticals(str)
-		str_toks = str.split(" ")
+		st = removeParentheticals(st) + " "
+		str_toks = st.split(" ")
 		try:
 			ret.quantity = float(Fraction(str_toks[0]))
 			ret.quantity += float(Fraction(str_toks[1]))
 		except ValueError:
 			pass
-		ret.name = returnFirstMatch(str, self.ingredients_list).strip(' ')
-		ret.unit = returnFirstMatch(str, self.unit_list).strip(' ')
+		rin = returnFirstMatch(st, self.ingredients_list)
+		if rin.name != '':
+			ret.name = rin.name
+			ret.meat = rin.meat
 		
-		#Determine if the ingredient is a meat
-		ret.meat = isMeat(ret.name, self.meats_list)
+		rin = returnFirstMatch(st, self.unit_list)
+		if rin.name != '':
+			ret.unit = rin.name
 		return ret

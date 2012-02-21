@@ -8,10 +8,10 @@ class Recipe:
     directions = []
 
 class Ingredient:
-        quantity = 1 #e.g. 1
-        unit = '' #e.g. tablespoon
+        quantity = 1.0 #e.g. 1
+        unit = 'unit' #e.g. tablespoon
         meat = False
-        name = '' #e.g. salt
+        name = 'unknown' #e.g. salt
         
 def FetchRecipe(url):
     try:
@@ -35,10 +35,9 @@ def FetchRecipe(url):
     for ingredient_name in ingredients:
         recipeFromURL.ingredients.append(
            ingparser.CreateIngredientFromString(
-              re.sub(regex, '', ingredient_name)
+              re.sub(regex, '', ingredient_name).lower()
             )
          )
-    
     #Directions
     directions_tags = soup.findAll('div', attrs={"class" : "directions"})
     directions_tags = directions_tags[0]('span', attrs={"class" : "plaincharacterwrap break"})
@@ -48,7 +47,6 @@ def FetchRecipe(url):
         recipeFromURL.directions.append(
               re.sub(regex, '', step_in_directions)
             )
-
     return recipeFromURL
     
 

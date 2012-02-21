@@ -5,6 +5,7 @@ tablespoon
 teaspoon
 clove
 pinch
+dash
 fluid ounce
 fluidic ounce
 gill
@@ -16,3 +17,7 @@ litre
 gram
 inch
 to taste
+thigh
+leg
+breast
+cut
