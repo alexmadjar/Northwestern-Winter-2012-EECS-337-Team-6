@@ -32,6 +32,7 @@ oysters
 clams
 mussels
 tuna
+chicken broth
 anchovies
 fish
 fish sauce
