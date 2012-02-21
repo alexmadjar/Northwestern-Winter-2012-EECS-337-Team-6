@@ -8,9 +8,9 @@ class Recipe:
     directions = []
 
 class Ingredient:
-        quantity = 0 #e.g. 1
+        quantity = 1 #e.g. 1
         unit = '' #e.g. tablespoon
-        #meat = False
+        meat = False
         name = '' #e.g. salt
         
 def FetchRecipe(url):
@@ -45,7 +45,6 @@ def FetchRecipe(url):
     directions = [tag.contents[0] for tag in directions_tags]
     regex = '\\r\\n.[ ]+'
     for step_in_directions in directions:
-        print step_in_directions
         recipeFromURL.directions.append(
               re.sub(regex, '', step_in_directions)
             )
@@ -54,13 +53,35 @@ def FetchRecipe(url):
     
 
 def PrintRecipe(recipe):
-    print recipe.ingredients
-    print recipe.directions
+    print 'INGREDIENTS\n',
+    print '-------------\n',
+    for cur_ingredient in recipe.ingredients:
+        print 'Quantity:',
+        print cur_ingredient.quantity,
+        print 'Unit:',
+        print cur_ingredient.unit,
+        print 'Name:',
+        print cur_ingredient.name,
+        print 'Meat:' ,
+        print cur_ingredient.meat,
+        print '\n',
+    
+    print '\n',
+    print 'DIRECTIONS\n',
+    print '-------------\n',
+    count = 1   
+    for cur_direction in recipe.directions:
+        print 'Step ',
+        print count,
+        print ': ',
+        print cur_direction,
+        print '\n',
+        count = count + 1
     return None
 
 
 def VegetarianVersion(recipe):
-    #Version 1: Replace the meat ingredients with a random vegitarian substitute
+    #Replace the meat ingredients with a random vegitarian substitute
     
     return recipe
 

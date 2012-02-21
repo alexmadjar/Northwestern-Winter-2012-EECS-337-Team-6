@@ -27,6 +27,7 @@ prosciutto
 quail
 rabbit
 salami
+salmon
 sausage
 squirrel
 sweetbread

@@ -13,3 +13,4 @@ print '\n\n\n\n'
 print 'The Vegetarian Version:\n'
 veggie = Recipe.VegetarianVersion(recipy)
 Recipe.PrintRecipe(veggie)
+ 
