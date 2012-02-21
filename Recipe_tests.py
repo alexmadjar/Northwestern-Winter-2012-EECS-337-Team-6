@@ -3,11 +3,11 @@ import Recipe
 from IngredientParser import IngredientParser
 
 class TestRecipeFunctions(unittest.TestCase):
-    
-    def testNonsenseIsNone(self):
-    	self.assertIsNone(Recipe.FetchRecipe("nonsense url"))
-    
-    def testIngrediantsList(self):
+	
+	def testNonsenseIsNone(self):
+		self.assertIsNone(Recipe.FetchRecipe("nonsense url"))
+	
+	def testIngrediantsList(self):
 		self.chick_salad_recipe = Recipe.FetchRecipe("http://allrecipes.com/recipe/holiday-chicken-salad/detail.aspx")
 		self.assertIsNotNone(self.chick_salad_recipe);
 		self.assertIs(type(self.chick_salad_recipe.ingredients), list);
@@ -57,4 +57,4 @@ class TestIngredientParsing(unittest.TestCase):
 		self.ingredientParserHelper(u'ground black pepper to taste', 1.0, "to taste", "black pepper", False)
 
 if __name__ == '__main__':
-    unittest.main()
+	unittest.main()

@@ -28,6 +28,19 @@ quail
 rabbit
 salami
 salmon
+oysters
+clams
+mussels
+tuna
+anchovies
+fish
+fish sauce
+fermented fish
+bass
+halibut
+sturgeon
+anchovy
+tuna
 sausage
 squirrel
 sweetbread

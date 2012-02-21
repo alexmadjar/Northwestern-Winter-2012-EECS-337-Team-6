@@ -1,6 +1,5 @@
 acorn squash
 alfalfa sprouts
-anchovies
 apples
 artichoke
 arugula
@@ -225,18 +224,9 @@ daikon
 ginger
 radish
 rum
-salmon
 salt
 salt and pepper
 scallion
-seafood
-anchovies
-mussels
-octopuses
-oysters
-salmon
-trout
-tuna
 seeds
 poppy seeds
 pumpkin seeds
@@ -359,7 +349,6 @@ sunchoke
 sweet potato
 taro
 yam
-tuna
 turbanado sugar
 turnip
 unrefined sugar
@@ -1084,10 +1073,8 @@ Doubanjiang
 Douchi
 Fermented bean curd
 Fermented bean paste
-Fermented fish
 Fermented milk product
 Fermented soy product
-Fish sauce
 Ganjang
 Garri
 Garum
@@ -1160,4 +1147,4 @@ Yakult
 Yellow soybean paste
 Yogurt
 Zha cai
-
+lemon rind

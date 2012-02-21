@@ -13,13 +13,13 @@ def normalize_string(line):
 	return removeParentheticals(line).strip().lower()
 
 def comparebylength(word1, word2):
-    """
-    write your own compare function:
-    returns value < 0 of word1 longer then word2
-    returns value = 0 if the same length
-    returns value > 0 of word2 longer than word1
-    """
-    return len(word2.name) - len(word1.name)
+	"""
+	write your own compare function:
+	returns value < 0 of word1 longer then word2
+	returns value = 0 if the same length
+	returns value > 0 of word2 longer than word1
+	"""
+	return len(word2.name) - len(word1.name)
 
 def removeParentheticals(t):
 	"""
@@ -92,6 +92,7 @@ class IngredientParser:
 
 	def CreateIngredientFromString(self, st):
 		ret = Recipe.Ingredient()
+		st = st.lower()
 		st = removeParentheticals(st) + " "
 		str_toks = st.split(" ")
 		try:
