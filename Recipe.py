@@ -96,5 +96,6 @@ def VegetarianVersion(recipe):
                 cur_ingredient.name = my_dict[cur_ingredient.name]
             else:
                 cur_ingredient.name = 'meatless ' + cur_ingredient.name
+            cur_ingredient.meat = False
     return recipe
 
