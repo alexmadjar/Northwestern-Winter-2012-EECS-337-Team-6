@@ -21,3 +21,6 @@ thigh
 leg
 breast
 cut
+package
+can
+bag

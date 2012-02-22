@@ -31,7 +31,8 @@ def FetchRecipe(url):
     #Format the ingredients to remove \r\n and leading spaces 
     #Assign the formatted ingredients to 
     regex = '\\r\\n.[ ]+'
-    ingparser = IngredientParser.IngredientParser()
+    ingparser = IngredientParser.IngredientParser() 
+    
     for ingredient_name in ingredients:
         recipeFromURL.ingredients.append(
            ingparser.CreateIngredientFromString(

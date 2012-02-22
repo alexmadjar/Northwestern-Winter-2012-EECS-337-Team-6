@@ -10,7 +10,8 @@ class IngListItem:
 		self.meat = b
 
 def normalize_string(line):
-	return removeParentheticals(line).strip().lower()
+	(remain, paren) = removeParentheticals(line)
+	return remain.strip().lower()
 
 def comparebylength(word1, word2):
 	"""
@@ -26,11 +27,12 @@ def removeParentheticals(t):
 	removes parenthetical statements from t
 	NOTE: fails on nested parentheticals
 	"""
+	m=""
 	while t.find('(') != -1:
 		(p, m, n) = t.partition('(')
 		(m, d, n) = n.partition(')')
 		t = p + n
-	return t
+	return (t, m)
 
 def returnFirstMatch(st, bank):
 	"""
@@ -93,7 +95,8 @@ class IngredientParser:
 	def CreateIngredientFromString(self, st):
 		ret = Recipe.Ingredient()
 		st = st.lower()
-		st = removeParentheticals(st) + " "
+		(remainder, paren) = removeParentheticals(st)
+		st = remainder + " "
 		str_toks = st.split(" ")
 		try:
 			ret.quantity = float(Fraction(str_toks[0]))
@@ -107,5 +110,8 @@ class IngredientParser:
 		
 		rin = returnFirstMatch(st, self.unit_list)
 		if rin.name != '':
-			ret.unit = rin.name
+			if paren != "":
+				ret.unit = "("+paren+") "+rin.name
+			else:
+				ret.unit = rin.name
 		return ret
