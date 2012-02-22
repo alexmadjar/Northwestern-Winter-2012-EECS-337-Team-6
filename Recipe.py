@@ -80,6 +80,12 @@ def PrintRecipe(recipe):
 
 def VegetarianVersion(recipe):
     #Replace the meat ingredients with a random vegitarian substitute
-    
+    my_dict = {'ground beef' : 'kidney beans', 'chicken' : 'chickpeas', 'duck' : 'seiten', 'pork': 'shitake mushrooms'}
+    for cur_ingredient in recipe.ingredients:
+        if cur_ingredient.meat == True:
+            if cur_ingredient.name in my_dict.keys():
+                cur_ingredient.name = my_dict[cur_ingredient.name]
+            else:
+                cur_ingredient.name = 'meatless ' + cur_ingredient.name
     return recipe
 
