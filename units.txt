@@ -24,3 +24,4 @@ cut
 package
 can
 bag
+drop
