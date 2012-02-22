@@ -57,7 +57,7 @@
 'Guanciale': '',
 'Ham hock': '',
 'Pancetta': '',
-'Pig's trotters': '',
+"Pig's trotters": '',
 'Pork belly': '',
 'Pork chop': '',
 'Pork loin': '',
