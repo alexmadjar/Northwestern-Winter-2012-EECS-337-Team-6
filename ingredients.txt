@@ -566,7 +566,7 @@ Apple
 Apricot (Prunus armeniaca or Armeniaca vulgaris)
 Araza (Eugenia stipitata)
 Arhat (Siraitia grosvenorii; Cucurbitaceae)
-Atemoya (Annona cherimola √ó Annona squamosa; Annonaceae)
+Atemoya (Annona cherimola ◊ Annona squamosa; Annonaceae)
 Atherton Raspberry (Rubus probus; Rosaceae)
 Avocado (Persea americana; Lauraceae)
 
@@ -576,13 +576,13 @@ Bacuri (Platonia esculenta; Guttiferae)
 Bael
 Woodapple (Aegle marmelos; Rutaceae)
 Banana (Musacea spp.; Musaceae)
-Barbadine (granadilla; maracuj√°-a√ßu in Portuguese)
+Barbadine (granadilla; maracuj·-aÁu in Portuguese)
 Barbados Cherry
 acerola
 Batuan (Garcinia morella)
 Beach Plum (Prunus maritima; Rosaceae)
 Bearberry (Arctostaphylos spp.)
-Betel Nut (‚ÄúAreca catechu‚Äù; Arecaceae)
+Betel Nut (ìAreca catechuî; Arecaceae)
 Bignay (Antidesma bunius; Euphorbiaceae)
 Bilberry or whortleberry (Vaccinium spp.)
 Bilimbi (Averrhoa bilimbi; Oxalidaceae) 
@@ -619,7 +619,7 @@ Button Mangosteen (Garcinia prainiana)
 Caimito (Pouteria caimito; Sapotaceae)
 Calabash Tree (Crescentia cujete)
 Calamondin (Citrofortunella Microcarpa)
-Calamansi (√óCitrofortunella Mitis))
+Calamansi (◊Citrofortunella Mitis))
 CamuCamu (Myrciaria dubia; Myrtaceae)
 Canistel (Pouteria campechiana; Sapotaceae)
 Cantaloupe
@@ -1149,3 +1149,6 @@ Yellow soybean paste
 Yogurt
 Zha cai
 lemon rind
+coloring
+cake mix
+kidney beans
