@@ -81,6 +81,10 @@ def PrintRecipe(recipe):
 
 def VegetarianVersion(recipe):
     #Replace the meat ingredients with a random vegitarian substitute
-    
+    meat_subs = eval(open("meat_subs.txt",'r').read())
+    for cur_ingredient in recipe.ingredients:
+        if cur_ingredient.meat:
+            cur_ingredient.name = meat_subs[cur_ingredient.name]
+            cur_ingredient.meat = False
     return recipe
 

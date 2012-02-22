@@ -49,8 +49,6 @@ sweetmeat
 turkey
 venison
 chicken bouillon
-
-
 Back bacon
 Boston butt
 Fatback
@@ -66,8 +64,6 @@ Pork rind
 Pork steak
 Spare ribs
 Pork tenderloin
-
-
 7-Bone
 Beef clod
 Beef shank
@@ -123,8 +119,6 @@ Tri-tip
 t bone
 tritip
 tri tip
-
-
 fish
 anchovies
 catfish
