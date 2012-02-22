@@ -86,7 +86,10 @@ def IsVeggie(recipe):
 
 def VegetarianVersion(recipe):
     #Replace the meat ingredients with a random vegitarian substitute
-    my_dict = {'ground beef' : 'kidney beans', 'chicken' : 'chickpeas', 'duck' : 'seiten', 'pork': 'shitake mushrooms'}
+    my_dict = eval(open("meats.txt").read())
+    #normalize dictionary keys
+    for k in my_dict.keys():
+        my_dict[k.lower()] = my_dict[k]
     for cur_ingredient in recipe.ingredients:
         if cur_ingredient.meat == True:
             if cur_ingredient.name in my_dict.keys():
