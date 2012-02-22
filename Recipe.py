@@ -78,6 +78,11 @@ def PrintRecipe(recipe):
         count = count + 1
     return None
 
+def IsVeggie(recipe):
+    for ing in recipe.ingredients:
+        if ing.meat:
+            return False
+    return True
 
 def VegetarianVersion(recipe):
     #Replace the meat ingredients with a random vegitarian substitute
