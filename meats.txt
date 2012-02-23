@@ -3,7 +3,7 @@
 'beef': 'beans',
 'pork': 'tempeh',
 'lamb': 'tofu',
-'bacon': 'tempeh',
+'bacon': 'eggplant',
 'bison': 'portobello mushroom',
 'chorizo': 'beans',
 'dog': 'tofu',
