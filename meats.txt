@@ -5,7 +5,6 @@
 'lamb': 'tofu',
 'bacon': 'tempeh',
 'bison': 'portobello mushroom',
-'chicken': 'tofu',
 'chorizo': 'beans',
 'dog': 'tofu',
 'duck': 'tofu',
