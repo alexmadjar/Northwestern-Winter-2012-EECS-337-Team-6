@@ -34,11 +34,9 @@ def FetchRecipe(url):
     ingparser = IngredientParser.IngredientParser() 
     
     for ingredient_name in ingredients:
-        recipeFromURL.ingredients.append(
-           ingparser.CreateIngredientFromString(
-              re.sub(regex, '', ingredient_name).lower()
-            )
-         )
+        t = re.sub(regex, '', ingredient_name).lower()
+        if t.find(":") == -1:
+            recipeFromURL.ingredients.append(ingparser.CreateIngredientFromString(t))
     #Directions
     directions_tags = soup.findAll('div', attrs={"class" : "directions"})
     directions_tags = directions_tags[0]('span', attrs={"class" : "plaincharacterwrap break"})

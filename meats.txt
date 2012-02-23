@@ -32,6 +32,7 @@
 'mussels': 'tofu',
 'tuna': 'tofu',
 'chicken broth': 'tomato soup',
+'cream of chicken soup': 'cream of celery soup',
 'anchovies': 'tofu',
 'fish': 'tofu',
 'fish sauce': 'tofu',
