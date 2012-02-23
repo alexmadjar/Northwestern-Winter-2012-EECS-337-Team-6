@@ -1,5 +1,8 @@
-output_file = open("C:\Users\Ben\Northwestern-Winter-2012-EECS-337-Team-6\meat_subs.txt",'w')
-input_file = open("C:\Users\Ben\Northwestern-Winter-2012-EECS-337-Team-6\meats.txt",'r')
+input_path = raw_input('provide path of non-dict meats file\n')
+output_path = raw_input('provide path of desired dict meat subs file\n')
+
+output_file = open(output_path,'w')
+input_file = open(input_path,'r')
 output_file.write('{')
 for line in input_file.readlines():
     line = line.strip()

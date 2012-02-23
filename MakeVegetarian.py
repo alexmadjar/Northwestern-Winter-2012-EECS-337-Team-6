@@ -10,7 +10,10 @@ if recipy is None:
 print '\n\n\n\nThe Original Recipe:\n'
 Recipe.PrintRecipe(recipy)
 print '\n\n\n\n'
-print 'The Vegetarian Version:\n'
-veggie = Recipe.VegetarianVersion(recipy)
-Recipe.PrintRecipe(veggie)
+if Recipe.IsVeggie(recipy):
+	print 'This recipe is already Vegetarian!!\n\n'
+else:
+	print 'The Vegetarian Version:\n'
+	veggie = Recipe.VegetarianVersion(recipy)
+	Recipe.PrintRecipe(veggie)
  

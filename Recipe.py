@@ -78,13 +78,31 @@ def PrintRecipe(recipe):
         count = count + 1
     return None
 
+def IsVeggie(recipe):
+    for ing in recipe.ingredients:
+        if ing.meat:
+            return False
+    return True
 
 def VegetarianVersion(recipe):
     #Replace the meat ingredients with a random vegitarian substitute
+<<<<<<< HEAD
     meat_subs = eval(open("meat_subs.txt",'r').read())
     for cur_ingredient in recipe.ingredients:
         if cur_ingredient.meat:
             cur_ingredient.name = meat_subs[cur_ingredient.name]
+=======
+    my_dict = eval(open("meats.txt").read())
+    #normalize dictionary keys
+    for k in my_dict.keys():
+        my_dict[k.lower()] = my_dict[k]
+    for cur_ingredient in recipe.ingredients:
+        if cur_ingredient.meat == True:
+            if cur_ingredient.name in my_dict.keys():
+                cur_ingredient.name = my_dict[cur_ingredient.name]
+            else:
+                cur_ingredient.name = 'meatless ' + cur_ingredient.name
+>>>>>>> 0ffcec3af9cd1b9c5f5f1a37b0abf7c2c4ed09fc
             cur_ingredient.meat = False
     return recipe
 

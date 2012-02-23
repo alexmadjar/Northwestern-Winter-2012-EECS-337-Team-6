@@ -64,9 +64,9 @@ class IngredientParser:
 		ing_list = []
 		for line in self.ingredients_list:
 			ing_list.append(IngListItem(line, False))
-		ingredients_file = open("meats.txt")
+		ingredients_file = eval(open("meats.txt").read())
 		self.ingredients_list = []
-		for line in ingredients_file:
+		for line in ingredients_file.keys():
 			self.ingredients_list.append(normalize_string(line))
 		# dedupe the list
 		self.ingredients_list = list(set(self.ingredients_list))
