@@ -46,7 +46,7 @@ def FetchRecipe(url):
     regex = '\\r\\n.[ ]+'
     for step_in_directions in directions:
         recipeFromURL.directions.append(
-              re.sub(regex, '', step_in_directions)
+              re.sub(regex, '', step_in_directions).lower()
             )
     return recipeFromURL
     
@@ -89,13 +89,19 @@ def VegetarianVersion(recipe):
     my_dict = eval(open("meats.txt").read())
     #normalize dictionary keys
     for k in my_dict.keys():
-        my_dict[k.lower()] = my_dict[k]
+        my_dict[k.strip().lower()] = my_dict[k]
     for cur_ingredient in recipe.ingredients:
         if cur_ingredient.meat == True:
+            oldname = cur_ingredient.name
             if cur_ingredient.name in my_dict.keys():
                 cur_ingredient.name = my_dict[cur_ingredient.name]
             else:
                 cur_ingredient.name = 'meatless ' + cur_ingredient.name
             cur_ingredient.meat = False
+            #update directions
+            new_directions = []
+            for d in recipe.directions:
+                new_directions.append(d.replace(oldname, cur_ingredient.name))
+            recipe.directions = new_directions;
     return recipe
 

@@ -134,4 +134,5 @@
 'skate': 'tofu',
 'stockfish': 'tofu',
 'trout': 'tofu',
+'shrimp': 'tofu',
 'tuna': 'tofu'}

@@ -163,6 +163,7 @@ beans
 lentils
 lemongrass
 lettuce
+salad
 liver
 maize
 maple syrup
