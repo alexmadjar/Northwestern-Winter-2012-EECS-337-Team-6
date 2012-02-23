@@ -12,7 +12,6 @@ arugula
 asparagus
 aubergine
 avocado
-bacon
 baking powder
 baking soda
 baking sugar
@@ -105,6 +104,8 @@ fava beans
 fiddlehead
 five spice powder
 flour
+flour tortillas
+baking mix
 frisee
 fructose
 fruit
@@ -163,6 +164,7 @@ beans
 lentils
 lemongrass
 lettuce
+salad
 liver
 maize
 maple syrup

@@ -1,153 +1,19 @@
-<<<<<<< HEAD
-chicken
-veal
-beef
-pork
-lamb
-bacon
-bison
-chicken
-chorizo
-dog
-duck
-foie gras
-frog
-game
-goat
-goose
-ham
-horse
-kidney
-lamb
-mutton
-meat
-ostrich
-pepperoni
-pork
-prosciutto
-quail
-rabbit
-salami
-salmon
-oysters
-clams
-mussels
-tuna
-chicken broth
-anchovies
-fish
-fish sauce
-fermented fish
-bass
-halibut
-sturgeon
-anchovy
-tuna
-sausage
-squirrel
-sweetbread
-sweetmeat
-turkey
-venison
-chicken bouillon
-Back bacon
-Boston butt
-Fatback
-Guanciale
-Ham hock
-Pancetta
-Pig's trotters
-Pork belly
-Pork chop
-Pork loin
-Pork ribs
-Pork rind
-Pork steak
-Spare ribs
-Pork tenderloin
-7-Bone
-Beef clod
-Beef shank
-Blade steak
-blade
-Brisket
-Carcass grade
-Chateaubriand
-Chuck steak
-Cube steak
-Delmonico steak
-delmonico
-Filet mignon
-Flank steak
-flank
-Flap steak
-Flat iron steak
-flat iron
-Hanger steak
-hanger
-Oxtail
-Plate steak
-Popeseye steak
-Ranch steak
-Restructured steak
-Rib eye steak
-Rib steak
-rib
-ribeye
-rib eye
-Round steak
-Rump steak
-Short loin
-Short ribs
-Shoulder tender
-shoulder
-Silverside
-Sirloin steak
-Sirloin
-Skirt steak
-Sobrebarriga
-Spare ribs
-Standing rib roast
-Strip steak
-steak
-T-bone steak
-T-bone
-Beef tenderloin
-tenderloin
-Top sirloin
-Tournedos
-Tri-tip
-t bone
-tritip
-tri tip
-fish
-anchovies
-catfish
-cod
-salt cod
-salmon
-skate
-stockfish
-trout
-tuna
-=======
-{'chicken': 'tofu',
+{'chicken': 'seitan',
 'veal': 'tofu',
-'beef': 'tofu',
-'pork': 'tofu',
+'beef': 'beans',
+'pork': 'tempeh',
 'lamb': 'tofu',
-'bacon': 'tofu',
-'bison': 'tofu',
-'chicken': 'tofu',
-'chorizo': 'tofu',
+'bacon': 'eggplant',
+'bison': 'portobello mushroom',
+'chorizo': 'beans',
 'dog': 'tofu',
 'duck': 'tofu',
-'foie gras': 'tofu',
+'foie gras': 'avocado',
 'frog': 'tofu',
 'game': 'tofu',
 'goat': 'tofu',
 'goose': 'tofu',
-'ham': 'tofu',
+'ham': 'portobello mushroom',
 'horse': 'tofu',
 'kidney': 'tofu',
 'lamb': 'tofu',
@@ -155,17 +21,17 @@ tuna
 'meat': 'tofu',
 'ostrich': 'tofu',
 'pepperoni': 'tofu',
-'pork': 'tofu',
 'prosciutto': 'tofu',
 'quail': 'tofu',
 'rabbit': 'tofu',
-'salami': 'tofu',
+'salami': 'portobello mushroom',
 'salmon': 'tofu',
 'oysters': 'tofu',
 'clams': 'tofu',
 'mussels': 'tofu',
 'tuna': 'tofu',
-'chicken broth': 'tofu',
+'chicken broth': 'tomato soup',
+'cream of chicken soup': 'cream of celery soup',
 'anchovies': 'tofu',
 'fish': 'tofu',
 'fish sauce': 'tofu',
@@ -179,9 +45,9 @@ tuna
 'squirrel': 'tofu',
 'sweetbread': 'tofu',
 'sweetmeat': 'tofu',
-'turkey': 'tofu',
+'turkey': 'tofurkey',
 'venison': 'tofu',
-'chicken bouillon': 'tofu',
+'chicken bouillon': 'spiced oil',
 
 
 'Back bacon': 'tofu',
@@ -215,48 +81,48 @@ tuna
 'delmonico': 'tofu',
 'Filet mignon': 'tofu',
 'Flank steak': 'tofu',
-'flank': 'tofu',
-'Flap steak': 'tofu',
+'flank': 'portobello mushroom',
+'Flap steak': 'portobello mushroom',
 'Flat iron steak': 'tofu',
-'flat iron': 'tofu',
-'Hanger steak': 'tofu',
-'hanger': 'tofu',
-'Oxtail': 'tofu',
-'Plate steak': 'tofu',
-'Popeseye steak': 'tofu',
-'Ranch steak': 'tofu',
-'Restructured steak': 'tofu',
-'Rib eye steak': 'tofu',
-'Rib steak': 'tofu',
-'rib': 'tofu',
-'ribeye': 'tofu',
-'rib eye': 'tofu',
-'Round steak': 'tofu',
-'Rump steak': 'tofu',
-'rump roast': 'tofu',
+'flat iron': 'portobello mushroom',
+'Hanger steak': 'portobello mushroom',
+'hanger': 'portobello mushroom',
+'Oxtail': 'portobello mushroom',
+'Plate steak': 'portobello mushroom',
+'Popeseye steak': 'portobello mushroom',
+'Ranch steak': 'portobello mushroom',
+'Restructured steak': 'portobello mushroom',
+'Rib eye steak': 'portobello mushroom',
+'Rib steak': 'portobello mushroom',
+'rib': 'portobello mushroom',
+'ribeye': 'portobello mushroom',
+'rib eye': 'portobello mushroom',
+'Round steak': 'portobello mushroom',
+'Rump steak': 'portobello mushroom',
+'rump roast': 'portobello mushroom',
 'Short loin': 'tofu',
-'Short ribs': 'tofu',
-'Shoulder tender': 'tofu',
-'shoulder': 'tofu',
-'Silverside': 'tofu',
-'Sirloin steak': 'tofu',
-'Sirloin': 'tofu',
-'Skirt steak': 'tofu',
-'Sobrebarriga': 'tofu',
-'Spare ribs': 'tofu',
-'Standing rib roast': 'tofu',
-'Strip steak': 'tofu',
-'steak': 'tofu',
-'T-bone steak': 'tofu',
-'T-bone': 'tofu',
-'Beef tenderloin': 'tofu',
-'tenderloin': 'tofu',
-'Top sirloin': 'tofu',
-'Tournedos': 'tofu',
-'Tri-tip': 'tofu',
-'t bone': 'tofu',
-'tritip': 'tofu',
-'tri tip': 'tofu',
+'Short ribs': 'portobello mushroom',
+'Shoulder tender': 'portobello mushroom',
+'shoulder': 'portobello mushroom',
+'Silverside': 'portobello mushroom',
+'Sirloin steak': 'portobello mushroom',
+'Sirloin': 'portobello mushroom',
+'Skirt steak': 'portobello mushroom',
+'Sobrebarriga': 'portobello mushroom',
+'Spare ribs': 'portobello mushroom',
+'Standing rib roast': 'portobello mushroom',
+'Strip steak': 'portobello mushroom',
+'steak': 'portobello mushroom',
+'T-bone steak': 'portobello mushroom',
+'T-bone': 'portobello mushroom',
+'Beef tenderloin': 'portobello mushroom',
+'tenderloin': 'portobello mushroom',
+'Top sirloin': 'portobello mushroom',
+'Tournedos': 'portobello mushroom',
+'Tri-tip': 'portobello mushroom',
+'t bone': 'portobello mushroom',
+'tritip': 'portobello mushroom',
+'tri tip': 'portobello mushroom',
 
 
 'fish': 'tofu',
@@ -268,5 +134,5 @@ tuna
 'skate': 'tofu',
 'stockfish': 'tofu',
 'trout': 'tofu',
+'shrimp': 'tofu',
 'tuna': 'tofu'}
->>>>>>> 0ffcec3af9cd1b9c5f5f1a37b0abf7c2c4ed09fc

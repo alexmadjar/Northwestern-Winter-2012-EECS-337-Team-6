@@ -25,3 +25,4 @@ package
 can
 bag
 drop
+strip
