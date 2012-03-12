@@ -3,8 +3,8 @@ import Candidate;
 def initializeCandidates():
     candict = {'Rick Santorum': ['Santorum', '#teamsantorum', '#santorum'],
                'Ron Paul': ['Ron Paul', '#ronpaul2012'],
-               'Newt Gingrich': ['Newt Gingrich', '#withnewt'],
-               'Mitt Romney': ['Romney', '#romney', '#mitt2012', 'Mitt Romney', '#mittromney']
+               'Newt Gingrich': ['Gingrich', '#withnewt'],
+               'Mitt Romney': ['Romney', '#mitt2012', '#mittromney']
                 }
     candidates = list()
     for name in candict.keys():
