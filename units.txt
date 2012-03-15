@@ -21,3 +21,8 @@ thigh
 leg
 breast
 cut
+package
+can
+bag
+drop
+strip

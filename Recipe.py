@@ -31,13 +31,12 @@ def FetchRecipe(url):
     #Format the ingredients to remove \r\n and leading spaces 
     #Assign the formatted ingredients to 
     regex = '\\r\\n.[ ]+'
-    ingparser = IngredientParser.IngredientParser()
+    ingparser = IngredientParser.IngredientParser() 
+    
     for ingredient_name in ingredients:
-        recipeFromURL.ingredients.append(
-           ingparser.CreateIngredientFromString(
-              re.sub(regex, '', ingredient_name).lower()
-            )
-         )
+        t = re.sub(regex, '', ingredient_name).lower()
+        if t.find(":") == -1:
+            recipeFromURL.ingredients.append(ingparser.CreateIngredientFromString(t))
     #Directions
     directions_tags = soup.findAll('div', attrs={"class" : "directions"})
     directions_tags = directions_tags[0]('span', attrs={"class" : "plaincharacterwrap break"})
@@ -45,7 +44,7 @@ def FetchRecipe(url):
     regex = '\\r\\n.[ ]+'
     for step_in_directions in directions:
         recipeFromURL.directions.append(
-              re.sub(regex, '', step_in_directions)
+              re.sub(regex, '', step_in_directions).lower()
             )
     return recipeFromURL
     
@@ -77,9 +76,30 @@ def PrintRecipe(recipe):
         count = count + 1
     return None
 
+def IsVeggie(recipe):
+    for ing in recipe.ingredients:
+        if ing.meat:
+            return False
+    return True
 
 def VegetarianVersion(recipe):
     #Replace the meat ingredients with a random vegitarian substitute
-    
+    my_dict = eval(open("meats.txt").read())
+    #normalize dictionary keys
+    for k in my_dict.keys():
+        my_dict[k.strip().lower()] = my_dict[k]
+    for cur_ingredient in recipe.ingredients:
+        if cur_ingredient.meat == True:
+            oldname = cur_ingredient.name
+            if cur_ingredient.name in my_dict.keys():
+                cur_ingredient.name = my_dict[cur_ingredient.name]
+            else:
+                cur_ingredient.name = 'meatless ' + cur_ingredient.name
+            cur_ingredient.meat = False
+            #update directions
+            new_directions = []
+            for d in recipe.directions:
+                new_directions.append(d.replace(oldname, cur_ingredient.name))
+            recipe.directions = new_directions;
     return recipe
 
