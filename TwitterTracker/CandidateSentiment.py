@@ -14,12 +14,18 @@ class CandidateSentiment:
         mydict2 = pickle.load(pkl_file)
         pkl_file.close()
         
+        print mydict1
+        print mydict2
+        
         self.positiveWords = mydict1[0]
         self.numPositiveSamples = mydict1[1]
         self.negativeWords = mydict2[0]
         self.numNegativeSamples = mydict2[1]
         
         self.candidates = ['Mitt Romney', 'Rick Santorum', 'Newt Gingrich']
+        
+        #Diagnostic
+        
         
     def analyzeSentiment(self, tweetCount):
         #First, normalize the positiveWords and negativeWords dictionaries
@@ -99,16 +105,18 @@ class CandidateSentiment:
                  
     def writeFiles(self):
         # write python dict to a file
+        write = [self.positiveWords,self.numPositiveSamples]
         output = open('positiveWords.pkl',"wb")
-        pickle.dump(self.positiveWords, output)
+        pickle.dump(write, output)
         output.close()
         
         # write python dict to a file
+        write = [self.negativeWords,self.numNegativeSamples]
         output = open('negativeWords.pkl',"wb")
-        pickle.dump(self.negativeWords, output)
+        pickle.dump(write, output)
         output.close()
 
-"""          
+      
  # write python dict to a file
 write = [{},0]
 output = open('positiveWords.pkl',"wb")
@@ -119,7 +127,7 @@ output.close()
 output = open('negativeWords.pkl',"wb")
 pickle.dump(write, output)
 output.close()
-"""                    
+                    
 c = CandidateSentiment()
 choice = raw_input('Train (T) or analyze (A):')
 
