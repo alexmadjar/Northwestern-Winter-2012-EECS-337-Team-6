@@ -16,19 +16,19 @@ class CandidateSentiment:
         mydict2 = pickle.load(pkl_file)
         pkl_file.close()
         
-        print mydict1
-        print mydict2
+        #print mydict1
+        #print mydict2
         
         self.positiveWords = mydict1
         self.negativeWords = mydict2
         
         
-        self.positiveWords = eval(open('positiveWords2.txt').read())
-        self.negativeWords = eval(open('negativeWords2.txt').read())
+        #self.positiveWords = eval(open('positiveWords2.txt').read())
+        #self.negativeWords = eval(open('negativeWords2.txt').read())
         
         
         self.candidates = ['Mitt Romney', 'Rick Santorum', 'Newt Gingrich']
-        self.trainingSet = ['Bill Clinton', 'Ronald Reagan', 'CNN', 'win', 'congratulate']
+        self.trainingSet = ['Mitt Romney', 'Rick Santorum', 'Newt Gingrich']
         
         #Diagnostic
         
@@ -66,6 +66,8 @@ class CandidateSentiment:
         
         positiveSentiment = 0
         negativeSentiment = 0
+        
+        candidateSentimentLevels = []
         for candidate in self.candidates:
             if(time_frame == 0):
                 tweetList = TwitterQuery.search(candidate, results = tweetCount)
@@ -85,8 +87,10 @@ class CandidateSentiment:
                 positiveSentiment += tweet_sentiment[0]
                 negativeSentiment += tweet_sentiment[1] 
             print 'The sentiment for ' + candidate + ' is ' + str(positiveSentiment - negativeSentiment)
-            print bestTweet_pos
-            print bestTweet_neg
+            
+            candidateSentimentLevels.append(positiveSentiment-negativeSentiment)
+        
+        return candidateSentimentLevels
         
     def tweetSentiment(self, tweet):
         word_list = tweet.content.lower().split()
@@ -107,7 +111,7 @@ class CandidateSentiment:
     def train(self):
         for trainer in self.trainingSet:
             #Tweets is a list of dictionaries, where each dictionary is a tweet. The keys are the different parts of the tweet
-            tweetList = TwitterQuery.search(trainer, results = 3)
+            tweetList = TwitterQuery.search(trainer, results = 10)
             
             #Dictionary that maps a word to how often it occurs
             wordOccurences = {}      
