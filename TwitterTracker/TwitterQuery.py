@@ -22,7 +22,7 @@ def search(query, results=20, start=1, **kwargs):
         'start': start
     })
     URL = SEARCH_BASE + '?' + urllib.urlencode(kwargs)
-    print URL
+    #print URL
     
     result = json.load(urllib.urlopen(URL))
     if 'Error' in result:
@@ -34,11 +34,12 @@ def search(query, results=20, start=1, **kwargs):
         tweetList = []    
         for tweet in info:
             t = Tweet()
-            t.hits = tweet['hits']
+            #t.hits = tweet['hits']
             t.author = tweet['trackback_author_nick']
             t.content = tweet['content']
             t.content = t.content.replace('&quot;', '')
+            t.content = t.content.replace('&#39;', '\'')
             tweetList.append(t);
-            return tweetList
+        return tweetList
    
     

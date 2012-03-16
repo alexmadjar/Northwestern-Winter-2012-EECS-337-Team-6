@@ -35,20 +35,8 @@ class CandidateSentiment:
         for key in self.negativeWords:
             self.negativeWords[key] = self.negativeWords[key]/self.numNegativeSamples
         
-        #Run Naive Bayes Filter on many tweets
         for candidate in self.candidates:
-            info = TwitterQuery.search(candidate)
-            #Tweets is a list of dictionaries, where each dictionary is a tweet. The keys are the different parts of the tweet
-            tweetList = []
-                       
-            for tweet in info:
-                t = TwitterQuery.Tweet()
-                t.hits = tweet['hits']
-                t.author = tweet['trackback_author_nick']
-                t.content = tweet['content']
-                t.printTweet()
-                tweetList.append(t);
-                
+            tweetList = TwitterQuery.search(candidate)     
             for tweet in tweetList:
                 self.tweetSentiment(tweet) 
         
@@ -61,16 +49,20 @@ class CandidateSentiment:
         
         p_positiveGivenWord = p_positiveTweet
         p_negativeGivenWord = p_negativeTweet
-        for word in word_list: 
-            p_wordGivenPositive = self.positiveWords[word]
-            p_wordGivenNegative = self.negativeWords[word]
-            
-            p_positiveGivenWord = p_positiveGivenWord * p_wordGivenNegative
-            p_negativeGivenWord = p_negativeGivenWord * p_wordGivenPositive
-            
+        
+        pSum = 0
+        nSum = 0
+        for word in self.positiveWords:
+            if(word in word_list):
+                pSum += self.positiveWords[word]
+                
+                
+        for word in self.negativeWords:
+            if(word in word_list):
+                nSum += self.negativeWords[word]
             
         #Print positive probability and negative probability
-        print ('Positive: ' + str(p_positiveGivenWord) + ' Negative: ' + str (p_negativeGivenWord) + '\n' + tweet.content)
+        print ('Positive: ' + str(pSum) + ' Negative: ' + str (nSum) + '\n' + tweet.content)
         
     def train(self):
         for candidate in self.candidates:
@@ -116,7 +108,7 @@ class CandidateSentiment:
         pickle.dump(write, output)
         output.close()
 
-      
+"""      
  # write python dict to a file
 write = [{},0]
 output = open('positiveWords.pkl',"wb")
@@ -127,6 +119,7 @@ output.close()
 output = open('negativeWords.pkl',"wb")
 pickle.dump(write, output)
 output.close()
+"""
                     
 c = CandidateSentiment()
 choice = raw_input('Train (T) or analyze (A):')
@@ -134,7 +127,7 @@ choice = raw_input('Train (T) or analyze (A):')
 if( choice == 'T'):
     c.train();
 else:
-    c.analyze(20);
+    c.analyzeSentiment(20);
     
 #c.analyzeSentiment(20)           
         
