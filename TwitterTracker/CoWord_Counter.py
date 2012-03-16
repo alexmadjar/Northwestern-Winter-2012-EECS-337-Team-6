@@ -12,7 +12,14 @@ class Word:
                 print CoWord + ': ' + str(num)
 #
 query = 'santorum'
-GenericWordsList = ['a','i','or','and','of','by','me','you','this','what','to','my','so','his','he','she','in','the','for','on',query]
+GenericWordsList = ['a', 'about', 'after', 'all', 'and', 'any', 'an', 'are', 'as', 'at', 'been', 'before', 
+  'be', 'but', 'by', 'can', 'could', 'did', 'down', 'do', 'first', 'for', 'from', 'good', 'great', 'had', 
+  'has', 'have', 'her', 'he', 'him', 'his', 'if', 'into', 'in', 'is', 'its', 'it', 'I', 'know', 'like', 
+  'little', 'made', 'man', 'may', 'men', 'me', 'more', 'Mr', 'much', 'must', 'my', 'not', 'now', 'no', 'of', 
+  'on', 'one', 'only', 'or', 'other', 'our', 'out', 'over', 'said', 'see', 'she', 'should', 'some', 'so', 
+  'such', 'than', 'that', 'the', 'their', 'them', 'then', 'there', 'these', 'they', 'this', 'time', 'to', 
+  'two', 'upon', 'up', 'us', 'very', 'was', 'were', 'we', 'what', 'when', 'which', 'who', 'will', 'with', 
+  'would', 'you', 'your']
 GenericWords = {}
 for GenericWord in GenericWordsList:
     GenericWords[GenericWord] = 1
