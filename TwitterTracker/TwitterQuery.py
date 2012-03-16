@@ -19,10 +19,10 @@ def search(query, results, start=1, **kwargs):
         'apikey': APP_ID,
         'q': query,
         'perpage': results,
-        'start': start
+        'page': start
     })
     URL = SEARCH_BASE + '?' + urllib.urlencode(kwargs)
-    #print URL
+    print URL
     
     result = json.load(urllib.urlopen(URL))
     if 'Error' in result:
@@ -30,6 +30,7 @@ def search(query, results, start=1, **kwargs):
         print 'Error in json request'
         # raise YahooSearchError, result['Error']
     else:
+        tweetList = []
         for tweet in result['response']['list']:
             t = Tweet()
             t.hits = tweet['hits']
