@@ -28,7 +28,7 @@ class CandidateSentiment:
                         wordOccurences[word] = 1
                         
             for key in wordOccurences:
-                print ("Word: " + key + ' Occurences: ' + str(wordOccurences[word]))
+                print ("Word: " + key + ' Occurences: ' + str(wordOccurences[key]))
                 
  
 c = CandidateSentiment()
