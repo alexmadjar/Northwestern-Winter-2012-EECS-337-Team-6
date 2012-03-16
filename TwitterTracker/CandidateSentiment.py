@@ -82,7 +82,7 @@ class CandidateSentiment:
                 tweet_sentiment = self.tweetSentiment(tweet)
                 if (tweet_sentiment[0]> bestTweet_prating):
                     bestTweet_pos = tweet.content
-                if (tweet_sentiment[1] < bestTweet_nrating):
+                if (tweet_sentiment[1]> bestTweet_nrating):
                     bestTweet_neg = tweet.content   
                 positiveSentiment += tweet_sentiment[0]
                 negativeSentiment += tweet_sentiment[1] 

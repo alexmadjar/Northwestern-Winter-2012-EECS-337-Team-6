@@ -14,17 +14,18 @@ class Tweet:
         #print ('Hits: ' + str(self.hits) + ' Author: ' + self.author + '\nTweet: ' + self.content + '\n')
         print self.content
         
-def search(query, results, mintime = 0, maxtime = 0,**kwargs):
+def search(query, results_perpage=20, page_start = 1, mintime = 0, maxtime = 0,**kwargs):
     kwargs.update({
         'apikey': APP_ID,
         'q': query,
-        'perpage': results,
+        'perpage': results_perpage,
+        'page': page_start
     })
     if(mintime != 0):
         kwargs['mintime'] = mintime
         kwargs['maxtime'] = maxtime
     URL = SEARCH_BASE + '?' + urllib.urlencode(kwargs)
-    #print URL
+    print URL
     
     result = json.load(urllib.urlopen(URL))
     if 'Error' in result:
