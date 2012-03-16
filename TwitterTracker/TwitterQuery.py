@@ -11,7 +11,8 @@ class Tweet:
     author = ''
     content = ''
     def printTweet(self):
-        print ('Hits: ' + str(self.hits) + ' Author: ' + self.author + '\nTweet: ' + self.content + '\n')
+        #print ('Hits: ' + str(self.hits) + ' Author: ' + self.author + '\nTweet: ' + self.content + '\n')
+        print self.content
         
 def search(query, results=20, start=1, **kwargs):
     tweetList = []
@@ -22,7 +23,7 @@ def search(query, results=20, start=1, **kwargs):
         'start': start
     })
     URL = SEARCH_BASE + '?' + urllib.urlencode(kwargs)
-    print URL
+    #print URL
     
     result = json.load(urllib.urlopen(URL))
     if 'Error' in result:
@@ -38,5 +39,6 @@ def search(query, results=20, start=1, **kwargs):
             #t.printTweet()
             tweetList.append(t);        
     return tweetList
+
    
     
