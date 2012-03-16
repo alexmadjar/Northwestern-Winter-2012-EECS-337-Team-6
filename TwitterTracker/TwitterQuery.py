@@ -14,13 +14,15 @@ class Tweet:
         #print ('Hits: ' + str(self.hits) + ' Author: ' + self.author + '\nTweet: ' + self.content + '\n')
         print self.content
         
-def search(query, results, start=1, **kwargs):
+def search(query, results, mintime = 0, maxtime = 0,**kwargs):
     kwargs.update({
         'apikey': APP_ID,
         'q': query,
         'perpage': results,
-        'start': start
     })
+    if(mintime != 0):
+        kwargs['mintime'] = mintime
+        kwargs['maxtime'] = maxtime
     URL = SEARCH_BASE + '?' + urllib.urlencode(kwargs)
     #print URL
     
@@ -40,6 +42,7 @@ def search(query, results, start=1, **kwargs):
             t.content = t.content.replace('&amp;', '&')
             t.content = t.content.replace('&#39;', '\'')
             t.content = t.content.replace('&amp;', '\'')
+            t.content = t.content.replace('\u2665', '')
             tweetList.append(t);
         return tweetList
     

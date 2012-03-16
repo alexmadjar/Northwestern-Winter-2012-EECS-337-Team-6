@@ -1,5 +1,7 @@
 import TwitterQuery
 import pickle
+import time
+import datetime
 class CandidateSentiment:
     
     def __init__(self):
@@ -17,44 +19,65 @@ class CandidateSentiment:
         #print mydict1
         #print mydict2
         
-        self.positiveWords = mydict1[0]
-        self.numPositiveSamples = mydict1[1]
-        self.negativeWords = mydict2[0]
-        self.numNegativeSamples = mydict2[1]
+        self.positiveWords = mydict1
+        self.negativeWords = mydict2
+        
+        
+        #self.positiveWords = eval(open('positiveWords2.txt').read())
+        #self.negativeWords = eval(open('negativeWords2.txt').read())
+        
         
         self.candidates = ['Mitt Romney', 'Rick Santorum', 'Newt Gingrich']
-        self.trainingSet = ['Greece', 'Abortion', 'Apple']
+        self.trainingSet = ['Mitt Romney', 'Rick Santorum', 'Newt Gingrich']
         
         #Diagnostic
         
+    def analyzeSentimentOverTime(self):
+        timeList = []
+        for x in range(-10,0):
+            time_start = datetime.datetime.now() + datetime.timedelta(days = 10)*x
+            time_end = datetime.datetime.now() + datetime.timedelta(days = 10)*(x+1)
+            timeList.append( (time_start , time_end) )
         
-    def analyzeSentiment(self, tweetCount):
+        for item in timeList:
+            t = (time.mktime(item[0].timetuple()),time.mktime(item[1].timetuple()))
+            #print ('Time frame: ' + item[0] + ' ' + item[1])
+            print 'For time frame starting: ' + str(item[0].month) + ' ' + str(item[0].day) + ' to ' + str(item[1].month) + ' ' + str(item[1].day)
+            self.analyzeSentiment(20, time_frame = t)
+            print '\n'
+        
+    def analyzeSentiment(self, tweetCount, time_frame = 0):
         #First, normalize the positiveWords and negativeWords dictionaries
-        check = 0
+        posCount = 0
         for key in self.positiveWords:
-            self.positiveWords[key] = float(self.positiveWords[key])/self.numPositiveSamples
-            check +=float(self.positiveWords[key])/self.numPositiveSamples
-        print check
-        
-        check = 0
+            posCount += self.positiveWords[key]
+        negCount = 0
         for key in self.negativeWords:
-            self.negativeWords[key] = float(self.negativeWords[key])/self.numNegativeSamples
-        print check
+            negCount += float(self.negativeWords[key])
+          
+        #Normalize 
+          
+        for key in self.positiveWords:
+            self.positiveWords[key] = float(self.positiveWords[key])/posCount 
         
-        print self.positiveWords
-        print self.numPositiveSamples
+        for key in self.negativeWords:
+            self.negativeWords[key] = float(self.negativeWords[key])/negCount
         
-        print self.negativeWords
-        print self.numNegativeSamples
         
         positiveSentiment = 0
         negativeSentiment = 0
+        
+        candidateSentimentLevels = []
         for candidate in self.candidates:
+            if(time_frame == 0):
+                tweetList = TwitterQuery.search(candidate, results = tweetCount)
+            else:
+                tweetList = TwitterQuery.search(candidate, results = tweetCount, mintime = time_frame[0], maxtime = time_frame[1])   
+
             bestTweet_pos = "nothing interesting"
             bestTweet_neg = "nothing interesting"
             bestTweet_prating = 0
             bestTweet_nrating = 0
-            tweetList = TwitterQuery.search(candidate, results = tweetCount)     
             for tweet in tweetList:
                 tweet_sentiment = self.tweetSentiment(tweet)
                 if (tweet_sentiment[0]> bestTweet_prating):
@@ -64,13 +87,14 @@ class CandidateSentiment:
                 positiveSentiment += tweet_sentiment[0]
                 negativeSentiment += tweet_sentiment[1] 
             print 'The sentiment for ' + candidate + ' is ' + str(positiveSentiment - negativeSentiment)
-            print 'The most positive tweet for ' + candidate + ' is ' + '"' + bestTweet_pos + '"'
-            print 'The most negative tweet for ' + candidate + ' is ' + '"' + bestTweet_neg + '"'
+            # print 'The most positive tweet for ' + candidate + ' is ' + '"' + bestTweet_pos + '"'
+            # print 'The most negative tweet for ' + candidate + ' is ' + '"' + bestTweet_neg + '"'
+            candidateSentimentLevels.append(positiveSentiment-negativeSentiment)
+            return candidateSentimentLevels
+
         
     def tweetSentiment(self, tweet):
         word_list = tweet.content.lower().split()
-        p_positiveTweet = self.numPositiveSamples/(self.numNegativeSamples + self.numPositiveSamples)
-        p_negativeTweet = 1 - p_positiveTweet
         
         pSum = 0
         nSum = 0
@@ -88,7 +112,7 @@ class CandidateSentiment:
     def train(self):
         for trainer in self.trainingSet:
             #Tweets is a list of dictionaries, where each dictionary is a tweet. The keys are the different parts of the tweet
-            tweetList = TwitterQuery.search(trainer, results = 3)
+            tweetList = TwitterQuery.search(trainer, results = 10)
             
             #Dictionary that maps a word to how often it occurs
             wordOccurences = {}      
@@ -106,32 +130,28 @@ class CandidateSentiment:
                             self.negativeWords[word] = self.negativeWords[word] + abs(rated_sentiment)
                         else:
                             self.negativeWords[word] = abs(rated_sentiment)
-                        self.numNegativeSamples = self.numNegativeSamples + abs(rated_sentiment)
                     elif(rated_sentiment > 0):
                         if(self.positiveWords.has_key(word)):
                             self.positiveWords[word] = self.positiveWords[word] + abs(rated_sentiment)
                         else:
                             self.positiveWords[word] = abs(rated_sentiment)
-                        self.numPositiveSamples = self.numPositiveSamples + abs(rated_sentiment)
         
         self.writeFiles() 
                  
     def writeFiles(self):
         # write python dict to a file
-        write = [self.positiveWords,self.numPositiveSamples]
         output = open('positiveWords.pkl',"wb")
-        pickle.dump(write, output)
+        pickle.dump(self.positiveWords, output)
         output.close()
         
         # write python dict to a file
-        write = [self.negativeWords,self.numNegativeSamples]
         output = open('negativeWords.pkl',"wb")
-        pickle.dump(write, output)
+        pickle.dump(self.negativeWords, output)
         output.close()
         
 def resetTrainingSet():         
      # write python dict to a file
-    write = [{},0]
+    write = {}
     output = open('positiveWords.pkl',"wb")
     pickle.dump(write, output)
     output.close()
@@ -148,7 +168,8 @@ choice = raw_input('Train (T) or analyze (A):')
 if( choice == 'T'):
     c.train();
 else:
-    c.analyzeSentiment(50);
+    #c.analyzeSentiment(50);
+    c.analyzeSentimentOverTime();
     
 #c.analyzeSentiment(20)           
         

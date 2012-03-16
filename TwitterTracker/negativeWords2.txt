@@ -1,0 +1,1 @@
+{'lose' : 1,'loser' : 1, 'fail' : 1, 'failure':1, 'terrible':1, 'horrible':1,'fault':1,'dead':1,'death':1,'die':1,}
