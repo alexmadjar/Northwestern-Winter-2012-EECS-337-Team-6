@@ -14,12 +14,11 @@ class Tweet:
         #print ('Hits: ' + str(self.hits) + ' Author: ' + self.author + '\nTweet: ' + self.content + '\n')
         print self.content
         
-def search(query, perpage=20, start=1, **kwargs):
-    tweetList = []
+def search(query, results, start=1, **kwargs):
     kwargs.update({
         'apikey': APP_ID,
         'q': query,
-        'perpage': perpage,
+        'perpage': results,
         'start': start
     })
     URL = SEARCH_BASE + '?' + urllib.urlencode(kwargs)
@@ -36,9 +35,10 @@ def search(query, perpage=20, start=1, **kwargs):
             t.hits = tweet['hits']
             t.author = tweet['trackback_author_nick']
             t.content = tweet['content']
-            #t.printTweet()
-            tweetList.append(t);        
-    return tweetList
-
-   
+            t.content = t.content.replace('&quot;', '')
+            t.content = t.content.replace('&amp;', '&')
+            t.content = t.content.replace('&#39;', '\'')
+            t.content = t.content.replace('&amp;', '\'')
+            tweetList.append(t);
+        return tweetList
     
