@@ -50,12 +50,22 @@ class CandidateSentiment:
         positiveSentiment = 0
         negativeSentiment = 0
         for candidate in self.candidates:
+            bestTweet_pos = "nothing interesting"
+            bestTweet_neg = "nothing interesting"
+            bestTweet_prating = 0
+            bestTweet_nrating = 0
             tweetList = TwitterQuery.search(candidate, results = tweetCount)     
             for tweet in tweetList:
                 tweet_sentiment = self.tweetSentiment(tweet)
+                if (tweet_sentiment[0]> bestTweet_prating):
+                    bestTweet_pos = tweet.content
+                elif (tweet_sentiment[1] < bestTweet_nrating):
+                    bestTweet_neg = tweet.content   
                 positiveSentiment += tweet_sentiment[0]
                 negativeSentiment += tweet_sentiment[1] 
             print 'The sentiment for ' + candidate + ' is ' + str(positiveSentiment - negativeSentiment)
+            print bestTweet_pos
+            print bestTweet_neg
         
     def tweetSentiment(self, tweet):
         word_list = tweet.content.lower().split()
@@ -85,7 +95,7 @@ class CandidateSentiment:
             for tweet in tweetList:                   
                 #Print the tweet, and ask the user to rate if this statement has a positive or negative sentiment        
                 tweet.printTweet();
-                rated_sentiment = int(raw_input('Tweet Sentiment: -3 to 3'))
+                rated_sentiment = int(raw_input('Tweet Sentiment: -3 to 3: '))
                 tweet.content = tweet.content.lower()
                 tweet.content = tweet.content.replace(trainer, '')
                 word_list = tweet.content.split()

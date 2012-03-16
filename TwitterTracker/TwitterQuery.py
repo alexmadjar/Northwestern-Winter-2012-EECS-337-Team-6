@@ -30,6 +30,7 @@ def search(query, results, start=1, **kwargs):
         print 'Error in json request'
         # raise YahooSearchError, result['Error']
     else:
+        tweetList = []
         for tweet in result['response']['list']:
             t = Tweet()
             t.hits = tweet['hits']
