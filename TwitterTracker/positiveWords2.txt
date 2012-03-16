@@ -1,0 +1,2 @@
+{'win':1,'wins':1,'winner':1,'best':1,'good':1, 'excitement':1, 'happy':1, 'great':1, 'excellent':1, 'excited':1, 'beat':1, 'success':1, 'finish':1, 'thrilled':1, 
+'trust':1}

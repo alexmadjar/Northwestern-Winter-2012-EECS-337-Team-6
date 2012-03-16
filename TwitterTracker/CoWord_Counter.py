@@ -11,7 +11,7 @@ class Word:
             if(num > 1):
                 print CoWord + ': ' + str(num)
 #
-GenericWordsList = ['a','i','or','and','of','by','me','you','this','what','to','my','so','his']
+GenericWordsList = ['a','i','or','and','of','by','me','you','this','what','to','my','so','his','he','she','in','the','for','on']
 GenericWords = {}
 for GenericWord in GenericWordsList:
     GenericWords[GenericWord] = 1
@@ -20,7 +20,7 @@ for i in range(10):
     TweetList = TwitterQuery.search('santorum',100,i+1)
     tweetcount = 0
     for tweet in TweetList:
-    #Filter out non alphanumerics, and strip out connected punctuation
+    #Filter out non alphanumerics and overly generic words, and strip out connected punctuation
         unfiltered_words = tweet.content.lower().split()
         words = []
         for word in unfiltered_words:
