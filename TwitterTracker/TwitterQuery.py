@@ -28,6 +28,14 @@ def search(query, results=20, start=1, **kwargs):
         # An error occurred; raise an exception
         print 'Error in json request'
         # raise YahooSearchError, result['Error']
-    return result['response']['list']
+        
+    tweetList = []    
+    for tweet in info:
+            t = TwitterQuery.Tweet()
+            t.hits = tweet['hits']
+            t.author = tweet['trackback_author_nick']
+            t.content = tweet['content']
+            tweetList.append(t);
+    return tweetList
    
     
