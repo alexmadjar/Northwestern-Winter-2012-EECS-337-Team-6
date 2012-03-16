@@ -19,7 +19,7 @@ GenericWordsList = ['a', 'about', 'after', 'all', 'and', 'any', 'an', 'are', 'as
   'on', 'one', 'only', 'or', 'other', 'our', 'out', 'over', 'said', 'see', 'she', 'should', 'some', 'so', 
   'such', 'than', 'that', 'the', 'their', 'them', 'then', 'there', 'these', 'they', 'this', 'time', 'to', 
   'two', 'upon', 'up', 'us', 'very', 'was', 'were', 'we', 'what', 'when', 'which', 'who', 'will', 'with', 
-  'would', 'you', 'your']
+  'would', 'you', 'your', query]
 GenericWords = {}
 for GenericWord in GenericWordsList:
     GenericWords[GenericWord] = 1
