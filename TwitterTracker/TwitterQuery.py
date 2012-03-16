@@ -30,18 +30,4 @@ def search(query, results=20, start=1, **kwargs):
         # raise YahooSearchError, result['Error']
     return result['response']['list']
    
-""" entry point """ 
-
-candidates = ['Mitt Romney', 'Rick Santorum', 'Newt Gingrich']
-    
-for candidate in candidates:
-    info = search(candidate)
-    #Tweets is a list of dictionaries, where each dictionary is a tweet. The keys are the different parts of the tweet
-    tweetList = []
-    for tweet in info:
-        t = Tweet() 
-        t.hits = tweet['hits']
-        t.author = tweet['trackback_author_nick']
-        t.content = tweet['content']
-        t.printTweet()
     
