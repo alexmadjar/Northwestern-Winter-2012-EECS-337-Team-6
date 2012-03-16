@@ -14,6 +14,7 @@ class Tweet:
         print ('Hits: ' + str(self.hits) + ' Author: ' + self.author + '\nTweet: ' + self.content + '\n')
         
 def search(query, results=20, start=1, **kwargs):
+    tweetList = []
     kwargs.update({
         'apikey': APP_ID,
         'q': query,
@@ -28,6 +29,14 @@ def search(query, results=20, start=1, **kwargs):
         # An error occurred; raise an exception
         print 'Error in json request'
         # raise YahooSearchError, result['Error']
-    return result['response']['list']
+    else:
+        for tweet in result['response']['list']:
+            t = Tweet()
+            t.hits = tweet['hits']
+            t.author = tweet['trackback_author_nick']
+            t.content = tweet['content']
+            #t.printTweet()
+            tweetList.append(t);        
+    return tweetList
    
     

@@ -16,4 +16,3 @@ else:
 	print 'The Vegetarian Version:\n'
 	veggie = Recipe.VegetarianVersion(recipy)
 	Recipe.PrintRecipe(veggie)
- 
