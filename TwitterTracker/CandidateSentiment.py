@@ -87,8 +87,8 @@ class CandidateSentiment:
                 positiveSentiment += tweet_sentiment[0]
                 negativeSentiment += tweet_sentiment[1] 
             print 'The sentiment for ' + candidate + ' is ' + str(positiveSentiment - negativeSentiment)
-            # print 'The most positive tweet for ' + candidate + ' is ' + '"' + bestTweet_pos + '"'
-            # print 'The most negative tweet for ' + candidate + ' is ' + '"' + bestTweet_neg + '"'
+            print 'The most positive tweet for ' + candidate + ' is ' + '"' + bestTweet_pos + '"'
+            print 'The most negative tweet for ' + candidate + ' is ' + '"' + bestTweet_neg + '"'
             candidateSentimentLevels.append(positiveSentiment-negativeSentiment)
             return candidateSentimentLevels
 
