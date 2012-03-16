@@ -11,13 +11,14 @@ class Word:
             if(num > 1):
                 print CoWord + ': ' + str(num)
 #
-GenericWordsList = ['a','i','or','and','of','by','me','you','this','what','to','my','so','his','he','she','in','the','for','on']
+query = 'santorum'
+GenericWordsList = ['a','i','or','and','of','by','me','you','this','what','to','my','so','his','he','she','in','the','for','on',query]
 GenericWords = {}
 for GenericWord in GenericWordsList:
     GenericWords[GenericWord] = 1
 WordOccurrences = {}
 for i in range(10):
-    TweetList = TwitterQuery.search('santorum',100,i+1)
+    TweetList = TwitterQuery.search(query,100,i+1)
     tweetcount = 0
     for tweet in TweetList:
     #Filter out non alphanumerics and overly generic words, and strip out connected punctuation
@@ -48,8 +49,25 @@ for i in range(10):
 #
 for label,word in WordOccurrences.iteritems():
     if(word.count > 5):
-        try:
-            word.printWord();
-        except:
-            pass
-    
+        important_words = []
+        has_word = False
+        for co_word,co_count in word.CoWords.iteritems():
+            if (co_count/word.count > .5):
+                has_word = True
+                important_words.append(co_word)
+        if(has_word):
+            important_words.append(word.name)
+            print '\n\n\nTrend found, words are: '
+            for trend_word in important_words:
+                print trend_word
+            new_query = query
+            for imp_word in important_words:
+                new_query += ' '
+                new_query += imp_word
+            TweetList = TwitterQuery.search(new_query,10,1)
+            print '\nSome representative tweets:'
+            for tweet in TweetList:
+                try:
+                    print tweet.content
+                except:
+                    print 'failed to print tweet'
