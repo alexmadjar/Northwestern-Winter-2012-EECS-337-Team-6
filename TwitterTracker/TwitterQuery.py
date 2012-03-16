@@ -14,12 +14,12 @@ class Tweet:
         #print ('Hits: ' + str(self.hits) + ' Author: ' + self.author + '\nTweet: ' + self.content + '\n')
         print self.content
         
-def search(query, results=20, start=1, **kwargs):
+def search(query, perpage=20, start=1, **kwargs):
     tweetList = []
     kwargs.update({
         'apikey': APP_ID,
         'q': query,
-        'results': results,
+        'perpage': perpage,
         'start': start
     })
     URL = SEARCH_BASE + '?' + urllib.urlencode(kwargs)
