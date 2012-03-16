@@ -38,6 +38,7 @@ def search(query, results=20, start=1, **kwargs):
             t.author = tweet['trackback_author_nick']
             t.content = tweet['content']
             t.content = t.content.replace('&quot;', '')
+            t.content = t.content.replace('&amp;', '&')
             t.content = t.content.replace('&#39;', '\'')
             tweetList.append(t);
         return tweetList
